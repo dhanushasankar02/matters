@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="800" height="600">
+  <defs>
+    <linearGradient id="sizeHeroBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0f172a"/>
+      <stop offset="50%" stop-color="#1e293b"/>
+      <stop offset="100%" stop-color="#0a0f1d"/>
+    </linearGradient>
+    <linearGradient id="goldAccent" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#facc15"/>
+      <stop offset="100%" stop-color="#eab308"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="800" height="600" fill="url(#sizeHeroBg)"/>
+
+  <!-- Architectural Grid Lines -->
+  <path d="M 0 100 H 800 M 0 200 H 800 M 0 300 H 800 M 0 400 H 800 M 0 500 H 800" stroke="#334155" stroke-width="1" stroke-dasharray="4 8"/>
+  <path d="M 100 0 V 600 M 200 0 V 600 M 300 0 V 600 M 400 0 V 600 M 500 0 V 600 M 600 0 V 600 M 700 0 V 600" stroke="#334155" stroke-width="1" stroke-dasharray="4 8"/>
+
+  <!-- Room Outline -->
+  <rect x="120" y="140" width="560" height="360" rx="20" fill="none" stroke="#facc15" stroke-width="3"/>
+  <text x="140" y="170" font-family="'Plus Jakarta Sans', sans-serif" font-weight="800" font-size="14" fill="#facc15">ROOM BOUNDARY (14' x 16')</text>
+
+  <!-- Bed Blueprint -->
+  <rect x="250" y="220" width="300" height="220" rx="16" fill="#1e293b" stroke="#38bdf8" stroke-width="4"/>
+  <rect x="270" y="235" width="120" height="40" rx="8" fill="#334155"/>
+  <rect x="410" y="235" width="120" height="40" rx="8" fill="#334155"/>
+  
+  <text x="400" y="320" font-family="'Plus Jakarta Sans', sans-serif" font-weight="800" font-size="18" fill="#ffffff" text-anchor="middle">KING MATTRESS (76" x 80")</text>
+
+  <!-- 24-Inch Clearance Indicator Arrows -->
+  <line x1="140" y1="330" x2="230" y2="330" stroke="#38bdf8" stroke-width="3" stroke-dasharray="4 4"/>
+  <text x="185" y="320" font-family="'Plus Jakarta Sans', sans-serif" font-weight="700" font-size="12" fill="#38bdf8" text-anchor="middle">24" WALKWAY</text>
+
+  <line x1="570" y1="330" x2="660" y2="330" stroke="#38bdf8" stroke-width="3" stroke-dasharray="4 4"/>
+  <text x="615" y="320" font-family="'Plus Jakarta Sans', sans-serif" font-weight="700" font-size="12" fill="#38bdf8" text-anchor="middle">24" WALKWAY</text>
+
+  <line x1="400" y1="460" x2="400" y2="490" stroke="#38bdf8" stroke-width="3" stroke-dasharray="4 4"/>
+  <text x="400" y="480" font-family="'Plus Jakarta Sans', sans-serif" font-weight="700" font-size="12" fill="#38bdf8" text-anchor="middle">FOOT CLEARANCE</text>
+
+  <!-- Title Badge -->
+  <rect x="250" y="50" width="300" height="44" rx="22" fill="url(#goldAccent)"/>
+  <text x="400" y="78" font-family="'Plus Jakarta Sans', sans-serif" font-weight="800" font-size="14" fill="#0f172a" text-anchor="middle">24-INCH PERIMETER FITTING RULE</text>
+</svg>

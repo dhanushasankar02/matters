@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="800" height="600">
+  <defs>
+    <linearGradient id="guestBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0f172a"/>
+      <stop offset="100%" stop-color="#1e1b4b"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="800" height="600" fill="url(#guestBg)"/>
+
+  <!-- Room Outline -->
+  <rect x="100" y="80" width="600" height="440" rx="24" fill="none" stroke="#facc15" stroke-width="4"/>
+  <text x="130" y="115" font-family="'Plus Jakarta Sans', sans-serif" font-weight="800" font-size="16" fill="#facc15">GUEST SUITE & WORKSPACE (11' x 12')</text>
+
+  <!-- Queen Bed Centered/Offset -->
+  <rect x="160" y="150" width="240" height="260" rx="16" fill="#1e293b" stroke="#38bdf8" stroke-width="4"/>
+  <text x="280" y="270" font-family="'Plus Jakarta Sans', sans-serif" font-weight="800" font-size="18" fill="#ffffff" text-anchor="middle">QUEEN BED</text>
+  <text x="280" y="295" font-family="'Plus Jakarta Sans', sans-serif" font-weight="600" font-size="14" fill="#7dd3fc" text-anchor="middle">60" x 80"</text>
+
+  <!-- Dedicated Desk & Workspace -->
+  <rect x="460" y="150" width="200" height="100" rx="12" fill="#334155" stroke="#64748b" stroke-width="2"/>
+  <text x="560" y="195" font-family="'Plus Jakarta Sans', sans-serif" font-weight="700" font-size="14" fill="#f1f5f9" text-anchor="middle">Work Desk</text>
+  <circle cx="560" cy="280" r="28" fill="#475569"/>
+  <text x="560" y="284" font-family="'Plus Jakarta Sans', sans-serif" font-weight="600" font-size="11" fill="#cbd5e1" text-anchor="middle">Chair</text>
+
+  <!-- Wardrobe / Closet -->
+  <rect x="460" y="340" width="200" height="80" rx="12" fill="#334155"/>
+  <text x="560" y="385" font-family="'Plus Jakarta Sans', sans-serif" font-weight="700" font-size="13" fill="#cbd5e1" text-anchor="middle">Storage Closet</text>
+
+  <rect x="250" y="475" width="300" height="35" rx="17" fill="#facc15"/>
+  <text x="400" y="498" font-family="'Plus Jakarta Sans', sans-serif" font-weight="800" font-size="13" fill="#0f172a" text-anchor="middle">24" WORKSPACE CLEARANCE</text>
+</svg>

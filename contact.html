@@ -1,0 +1,924 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SOMNA SLEEP | VIP Concierge & Contact Hub</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='25' fill='%230F172A'/%3E%3Cpath d='M75 50.5A29.7 29.7 0 0 1 45.3 80.2 29.7 29.7 0 0 1 15.6 50.5 29.7 29.7 0 0 1 38.8 21.8a27.6 27.6 0 0 0 6.5 17.7A27.7 27.7 0 0 0 63 46a27.6 27.6 0 0 0 12-4.5z' fill='%23FACC15'/%3E%3C/svg%3E">
+  
+  <!-- Tailwind CSS CDN with custom config -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            sleep: {
+              50: '#f4f6fa',
+              100: '#e6ebf4',
+              200: '#d1dceb',
+              300: '#b0c3de',
+              400: '#89a4cd',
+              500: '#6886bd',
+              600: '#526ca9',
+              700: '#43568b',
+              800: '#3a4972',
+              900: '#0F172A',
+              950: '#0a0f1d',
+            },
+            amber: {
+              300: '#fde047',
+              400: '#facc15',
+              500: '#eab308',
+            },
+            sand: {
+              50: '#fbfaf8',
+              100: '#f5f2eb',
+              200: '#e9e3d5',
+              300: '#d9cfbb',
+              400: '#c5b59b',
+            }
+          },
+          boxShadow: {
+            'sleep-soft': '0 10px 30px -10px rgba(15, 23, 42, 0.08)',
+            'sleep-hover': '0 25px 50px -12px rgba(15, 23, 42, 0.18)',
+            'glow-amber': '0 0 25px rgba(250, 204, 21, 0.25)',
+          }
+        }
+      }
+    };
+  </script>
+
+  <!-- Google Fonts: Plus Jakarta Sans for luxury feel -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style type="text/tailwindcss">
+    @layer base {
+      *, ::before, ::after {
+        box-sizing: border-box;
+      }
+      html {
+        overflow-x: hidden;
+        max-width: 100vw;
+        -webkit-text-size-adjust: 100%;
+      }
+      body {
+        font-family: 'Plus Jakarta Sans', sans-serif;
+        overflow-x: hidden;
+        width: 100%;
+        max-width: 100vw;
+        @apply bg-sand-50 text-slate-800 dark:bg-sleep-950 dark:text-slate-100 antialiased transition-colors duration-300;
+      }
+      img, video, iframe, canvas, svg {
+        max-width: 100%;
+        height: auto;
+      }
+      h1, h2, h3, h4, h5, h6, p, span, a, button {
+        overflow-wrap: break-word;
+        word-break: break-word;
+      }
+    }
+
+    .dropdown-menu {
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(8px);
+      transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    
+    .dropdown-group:hover .dropdown-menu,
+    .dropdown-group:focus-within .dropdown-menu {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+    }
+
+    #mobile-drawer {
+      transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    #mobile-drawer.open {
+      transform: translateX(0);
+    }
+    [dir="rtl"] #mobile-drawer {
+      transform: translateX(100%);
+    }
+    [dir="rtl"] #mobile-drawer.open {
+      transform: translateX(0);
+    }
+    [dir="ltr"] #mobile-drawer {
+      transform: translateX(-100%);
+    }
+    [dir="ltr"] #mobile-drawer.open {
+      transform: translateX(0);
+    }
+  </style>
+</head>
+<body class="min-h-screen flex flex-col justify-between pt-20">
+
+  <!-- ========================================== -->
+  <!-- 1. HEADER (DEEP MIDNIGHT SLEEP NAVY)      -->
+  <!-- ========================================== -->
+  <header class="fixed top-0 left-0 right-0 z-50 w-full bg-[#0F172A]/95 backdrop-blur-md border-b border-slate-800/80 shadow-xl text-white transition-colors duration-300">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-20 gap-4 flex-nowrap">
+        
+        <!-- 1. LEFT: BRAND LOGO -->
+        <a href="index.html" id="brand-logo-link" class="flex-shrink-0 flex items-center space-x-3 rtl:space-x-reverse focus:outline-none focus:ring-2 focus:ring-amber-400 rounded-xl p-1 group">
+          <div class="w-10 h-10 rounded-xl bg-slate-800 flex items-center justify-center text-amber-300 shadow-md group-hover:scale-105 transition-transform border border-slate-700">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21.752 15.002A9.718 9.718 0 0118 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 003 11.25C3 16.635 7.365 21 12.75 21a9.003 9.003 0 009.002-5.998z"/>
+            </svg>
+          </div>
+          <span class="text-xl font-extrabold text-white tracking-tight">SOMNA SLEEP</span>
+        </a>
+
+        <!-- 2. RIGHT SIDE: NAVIGATION LINKS & CONTROLS GROUP -->
+        <div class="flex items-center space-x-4 lg:space-x-6 rtl:space-x-reverse flex-nowrap">
+          
+          <!-- DESKTOP NAVIGATION LINKS (RIGHT SIDE ALIGNED) -->
+          <nav class="hidden lg:flex items-center space-x-1 xl:space-x-2 rtl:space-x-reverse font-medium text-sm whitespace-nowrap">
+            
+            <!-- HOME DROPDOWN MENU -->
+            <div class="relative dropdown-group py-5">
+              <button id="nav-btn-home" 
+                      type="button" 
+                      onclick="setActiveNav('home')"
+                      aria-expanded="false" 
+                      aria-haspopup="true"
+                      class="main-nav-btn inline-flex items-center gap-1.5 px-3.5 py-2 rounded-full text-slate-300 hover:text-amber-400 hover:bg-slate-800/80 font-medium text-base transition-all duration-200 focus:outline-none">
+                <span id="current-home-label">Home</span>
+                <!-- Chevron Down Arrow v on Right Side -->
+                <svg id="home-arrow-icon" class="w-3.5 h-3.5 text-slate-400 dark:text-slate-200 group-hover:text-amber-400 transition-transform duration-200 group-hover:rotate-180 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"/>
+                </svg>
+              </button>
+
+              <!-- Dropdown Container -->
+              <div id="home-dropdown-menu" 
+                   class="dropdown-menu absolute top-full w-44 p-1.5 bg-slate-900 border border-slate-700/80 rounded-2xl shadow-2xl z-50">
+
+                <!-- Option 1: Home 1 -->
+                <a href="index.html" 
+                   id="option-home1"
+                   onclick="setActiveHome('home1')"
+                   class="home-option-link flex items-center justify-between px-3.5 py-2.5 rounded-xl hover:bg-slate-800/80 text-slate-200 hover:text-amber-300 font-semibold text-sm transition-all duration-200">
+                  <span>Home 1</span>
+                  <span id="badge-home1" class="w-2 h-2 rounded-full bg-transparent"></span>
+                </a>
+
+                <!-- Option 2: Home 2 -->
+                <a href="home2.html" 
+                   id="option-home2"
+                   onclick="setActiveHome('home2')"
+                   class="home-option-link flex items-center justify-between px-3.5 py-2.5 rounded-xl hover:bg-slate-800/80 text-slate-200 hover:text-amber-300 font-semibold text-sm transition-all duration-200">
+                  <span>Home 2</span>
+                  <span id="badge-home2" class="w-2 h-2 rounded-full bg-transparent"></span>
+                </a>
+
+              </div>
+            </div>
+
+            <!-- NAV ITEMS -->
+            <a href="matters.html" id="nav-btn-mattresses" onclick="setActiveNav('mattresses')" class="main-nav-btn px-3 py-1.5 rounded-full text-slate-300 hover:text-amber-400 hover:bg-slate-800/80 font-medium text-xs transition-all duration-200">
+              Mattresses
+            </a>
+
+            <a href="size_guide.html" id="nav-btn-size-guide" onclick="setActiveNav('size-guide')" class="main-nav-btn px-3 py-1.5 rounded-full text-slate-300 hover:text-amber-400 hover:bg-slate-800/80 font-medium text-xs transition-all duration-200">
+              Size Guide
+            </a>
+
+            <a href="room-clearance.html" id="nav-btn-room-clearance" onclick="setActiveNav('room-clearance')" class="main-nav-btn px-3 py-1.5 rounded-full text-slate-300 hover:text-amber-400 hover:bg-slate-800/80 font-medium text-xs transition-all duration-200">
+              Room Clearance
+            </a>
+
+            <a href="delivery-clearance.html" id="nav-btn-delivery-clearance" onclick="setActiveNav('delivery-clearance')" class="main-nav-btn px-3 py-1.5 rounded-full text-slate-300 hover:text-amber-400 hover:bg-slate-800/80 font-medium text-xs transition-all duration-200">
+              Delivery Logistics
+            </a>
+
+            <a href="box-dimensions.html" id="nav-btn-box-specs" onclick="setActiveNav('box-specs')" class="main-nav-btn px-3 py-1.5 rounded-full text-slate-300 hover:text-amber-400 hover:bg-slate-800/80 font-medium text-xs transition-all duration-200">
+              Box Specs
+            </a>
+
+            <!-- CONTACT (ACTIVE) -->
+            <a href="contact.html" id="nav-btn-contact" onclick="setActiveNav('contact')" class="main-nav-btn px-3 py-1.5 rounded-full text-amber-400 font-bold text-xs transition-all duration-200">
+              Contact
+            </a>
+
+          </nav>
+
+          <!-- RIGHT-SIDE CONTROLS (DESKTOP CONTROLS & MOBILE HAMBURGER TRIGGER) -->
+          <div class="flex-shrink-0 flex items-center space-x-2 sm:space-x-3 rtl:space-x-reverse whitespace-nowrap">
+
+            <!-- DESKTOP-ONLY CONTROLS (DARK MODE, RTL, LOGIN) -->
+            <div class="hidden lg:flex items-center space-x-2 xl:space-x-3 rtl:space-x-reverse">
+              <!-- DARK MODE TOGGLE BUTTON -->
+              <button id="theme-toggle-btn" 
+                      type="button" 
+                      onclick="toggleDarkMode()" 
+                      aria-label="Toggle Dark Mode"
+                      title="Toggle Light / Dark Mode"
+                      class="p-2.5 rounded-full text-slate-300 hover:bg-slate-800 focus:outline-none focus:ring-2 focus:ring-amber-400 transition-all duration-200 hover:scale-105 active:scale-95">
+                <svg id="theme-toggle-dark-icon" class="w-5 h-5 block dark:hidden text-amber-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21.752 15.002A9.718 9.718 0 0118 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 003 11.25C3 16.635 7.365 21 12.75 21a9.003 9.003 0 008.354-5.646z"/>
+                </svg>
+                <svg id="theme-toggle-light-icon" class="w-5 h-5 hidden dark:block text-amber-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v2.25m6.364.386l-1.591 1.591M21 12h-2.25m-.386 6.364l-1.591-1.591M12 18.75V21m-4.773-4.227l-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0z"/>
+                </svg>
+              </button>
+
+              <!-- LTR / RTL DIRECTION TOGGLE BUTTON -->
+              <button id="rtl-toggle-btn" 
+                      type="button" 
+                      onclick="toggleRTL()" 
+                      aria-label="Toggle Text Direction LTR or RTL"
+                      title="Toggle LTR / RTL Direction"
+                      class="px-2.5 py-1.5 rounded-full text-xs font-semibold bg-slate-800 text-slate-200 border border-slate-700 hover:bg-slate-700 transition-all duration-200 flex items-center gap-1.5 focus:outline-none focus:ring-2 focus:ring-amber-400">
+                <svg class="w-4 h-4 text-amber-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7.5 21L3 16.5m0 0L7.5 12M3 16.5h13.5m0-13.5L21 7.5m0 0L16.5 12M21 7.5H7.5"/>
+                </svg>
+                <span id="rtl-status-label" class="tracking-wide">LTR</span>
+              </button>
+
+              <!-- LOGIN BUTTON -->
+              <a href="login.html" 
+                 class="flex items-center gap-2 px-5 py-2 rounded-full bg-amber-400 hover:bg-amber-300 text-slate-950 text-xs font-bold shadow-md hover:shadow-lg transition-all duration-200 transform hover:-translate-y-0.5 active:translate-y-0">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z"/>
+                </svg>
+                <span>Log In</span>
+              </a>
+            </div>
+
+            <!-- HAMBURGER BUTTON FOR TABLET / MOBILE -->
+            <button id="mobile-menu-trigger" 
+                    type="button" 
+                    onclick="toggleMobileMenu(true)"
+                    aria-label="Open navigation menu"
+                    class="lg:hidden p-2.5 rounded-2xl text-slate-100 hover:bg-slate-800 focus:outline-none focus:ring-2 focus:ring-amber-400 transition-colors">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"/>
+              </svg>
+            </button>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </header>
+
+  <!-- MOBILE SLIDE-OUT DRAWER -->
+  <div id="mobile-menu-backdrop" 
+       onclick="toggleMobileMenu(false)"
+       class="fixed inset-0 bg-slate-950/60 backdrop-blur-sm z-50 opacity-0 pointer-events-none transition-opacity duration-300 lg:hidden"></div>
+
+  <aside id="mobile-drawer" 
+         class="fixed top-0 left-0 bottom-0 w-80 max-w-[85vw] bg-white dark:bg-sleep-900 z-50 shadow-2xl flex flex-col justify-between p-6 overflow-y-auto lg:hidden">
+    
+    <div class="space-y-6">
+      <div class="flex items-center justify-between pb-4 border-b border-sand-200 dark:border-sleep-800">
+        <div class="flex items-center space-x-3 rtl:space-x-reverse">
+          <div class="w-9 h-9 rounded-lg bg-sleep-900 dark:bg-sleep-800 flex items-center justify-center text-amber-300">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21.752 15.002A9.718 9.718 0 0118 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 003 11.25C3 16.635 7.365 21 12.75 21a9.003 9.003 0 008.354-5.646z"/></svg>
+          </div>
+          <span class="text-lg font-bold text-sleep-900 dark:text-white">SOMNA SLEEP</span>
+        </div>
+        <button onclick="toggleMobileMenu(false)" class="p-2 rounded-xl text-slate-500 hover:bg-sand-100 dark:hover:bg-sleep-800">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+        </button>
+      </div>
+
+      <div class="rounded-2xl bg-sand-100/70 dark:bg-sleep-800/40 p-2 space-y-1">
+        <button onclick="toggleMobileHomeSubmenu()" class="w-full flex items-center justify-between px-3 py-2.5 text-slate-900 dark:text-white font-semibold text-base rounded-xl hover:bg-sand-200 dark:hover:bg-sleep-800">
+          <span>Home</span>
+          <svg id="mobile-home-chevron" class="w-4 h-4 text-slate-400 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"/></svg>
+        </button>
+        <div id="mobile-home-submenu" class="hidden pl-8 rtl:pr-8 rtl:pl-0 space-y-1 py-1">
+          <a href="index.html"  class="flex items-center justify-between py-2 px-3 text-sm rounded-lg font-medium text-slate-600 dark:text-slate-300 hover:bg-white/50 dark:hover:bg-sleep-800/40">
+            <span>Home 1</span>
+          </a>
+          <a href="home2.html"  class="flex items-center justify-between py-2 px-3 text-sm rounded-lg font-medium text-slate-600 dark:text-slate-300 hover:bg-white/50 dark:hover:bg-sleep-800/40">
+            <span>Home 2</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="space-y-1">
+        <a href="matters.html" id="mobile-nav-btn-mattresses" onclick="toggleMobileMenu(false)" class="flex items-center gap-3 px-4 py-3 text-slate-800 dark:text-slate-200 font-semibold text-base rounded-xl hover:bg-sand-100 dark:hover:bg-sleep-800/60">Mattresses</a>
+        <a href="size_guide.html" id="mobile-nav-btn-size-guide" onclick="toggleMobileMenu(false)" class="flex items-center gap-3 px-4 py-3 text-slate-800 dark:text-slate-200 font-semibold text-base rounded-xl hover:bg-sand-100 dark:hover:bg-sleep-800/60">Size Guide</a>
+        <a href="room-clearance.html" id="mobile-nav-btn-room-clearance" onclick="toggleMobileMenu(false)" class="flex items-center gap-3 px-4 py-3 text-slate-800 dark:text-slate-200 font-semibold text-base rounded-xl hover:bg-sand-100 dark:hover:bg-sleep-800/60">Room Clearance</a>
+        <a href="delivery-clearance.html" id="mobile-nav-btn-delivery-clearance" onclick="toggleMobileMenu(false)" class="flex items-center gap-3 px-4 py-3 text-slate-800 dark:text-slate-200 font-semibold text-base rounded-xl hover:bg-sand-100 dark:hover:bg-sleep-800/60">Delivery Logistics</a>
+        <a href="box-dimensions.html" id="mobile-nav-btn-box-specs" onclick="toggleMobileMenu(false)" class="flex items-center gap-3 px-4 py-3 text-slate-800 dark:text-slate-200 font-semibold text-base rounded-xl hover:bg-sand-100 dark:hover:bg-sleep-800/60">Box Specs</a>
+        <a href="contact.html" id="mobile-nav-btn-contact" onclick="toggleMobileMenu(false)" class="flex items-center gap-3 px-4 py-3 text-amber-500 font-bold text-base rounded-xl bg-sand-100 dark:bg-sleep-800">Contact</a>
+      </div>
+    </div>
+
+    <div class="pt-6 border-t border-sand-200 dark:border-sleep-800 space-y-3">
+      <!-- Dark Mode & RTL Controls inside Mobile Hamburger Menu -->
+      <div class="flex items-center justify-between p-2 rounded-2xl bg-sand-100/80 dark:bg-sleep-800/60 border border-sand-200 dark:border-sleep-700/80">
+        <!-- Mobile Dark Mode Toggle Button -->
+        <button type="button" onclick="toggleDarkMode()" class="flex items-center gap-2 px-3 py-2 rounded-xl text-xs font-bold text-slate-800 dark:text-slate-200 hover:bg-sand-200 dark:hover:bg-sleep-800 transition-all">
+          <svg class="w-4 h-4 text-amber-500 dark:text-amber-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21.752 15.002A9.718 9.718 0 0118 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 003 11.25C3 16.635 7.365 21 12.75 21a9.003 9.003 0 008.354-5.646z"/></svg>
+          <span>Theme</span>
+        </button>
+
+        <!-- Mobile RTL Toggle Button -->
+        <button type="button" onclick="toggleRTL()" class="flex items-center gap-2 px-3 py-2 rounded-xl text-xs font-bold text-slate-800 dark:text-slate-200 hover:bg-sand-200 dark:hover:bg-sleep-800 transition-all">
+          <svg class="w-4 h-4 text-amber-500 dark:text-amber-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7.5 21L3 16.5m0 0L7.5 12M3 16.5h13.5m0-13.5L21 7.5m0 0L16.5 12M21 7.5H7.5"/></svg>
+          <span id="mobile-rtl-status-label" class="tracking-wide">LTR</span>
+        </button>
+      </div>
+
+      <a href="login.html" onclick="toggleMobileMenu(false);" class="w-full flex items-center justify-center gap-2 py-3 rounded-full bg-amber-400 text-slate-950 font-bold shadow-md">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z"/></svg>
+        <span>Log In</span>
+      </a>
+    </div>
+  </aside>
+
+  <!-- MAIN PAGE CONTENT (7 UNIQUE SECTIONS FOR CONTACT.HTML) -->
+  <main class="flex-grow">
+    
+    <!-- ========================================== -->
+    <!-- SECTION 1: HERO - FULL-SCREEN CONCIERGE    -->
+    <!-- ========================================== -->
+    <section id="contact-hero" class="relative min-h-[85vh] lg:min-h-screen flex items-center bg-slate-950 text-white overflow-hidden">
+      
+      <!-- FULL-SCREEN BACKGROUND IMAGE WITH DARK GRADIENT OVERLAY -->
+      <div class="absolute inset-0 z-0">
+        <img src="images/contact_hero.jpg" alt="Somna Luxury Showroom Concierge Background" class="w-full h-full object-cover object-center">
+        <div class="absolute inset-0 bg-gradient-to-r from-slate-950/95 via-slate-950/85 to-slate-950/60 backdrop-blur-[2px]"></div>
+      </div>
+
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 relative z-10 w-full">
+        <div class="max-w-3xl space-y-8">
+          
+          <div class="flex items-center gap-2">
+            <span class="w-3 h-3 rounded-full bg-emerald-400 animate-ping"></span>
+            <span class="text-xs sm:text-sm font-extrabold uppercase tracking-widest text-emerald-300">● Live VIP Concierge Online</span>
+          </div>
+
+          <h1 class="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-extrabold tracking-tight leading-[1.1]">
+            Dedicated Sleep <br/>
+            <span class="text-transparent bg-clip-text bg-gradient-to-r from-amber-300 via-amber-400 to-amber-500">Concierge & Advisory</span>
+          </h1>
+
+          <p class="text-slate-200 text-base sm:text-lg lg:text-xl leading-relaxed font-medium">
+            Connect with certified sleep architects for custom firmness advice, order tracking, trade inquiries, and flagship showroom appointments.
+          </p>
+
+          <!-- Action Buttons -->
+          <div class="flex flex-wrap items-center gap-4 pt-2">
+            <a href="#contact-form" class="px-8 py-4 rounded-full bg-amber-400 hover:bg-amber-300 text-slate-950 font-extrabold text-sm tracking-wider transition-all shadow-xl transform hover:-translate-y-0.5">
+              Send Priority Inquiry &rarr;
+            </a>
+
+            <a href="#showroom-locations" class="px-8 py-4 rounded-full bg-slate-900/90 border border-slate-700 hover:border-amber-400 text-white font-extrabold text-sm transition-all shadow-lg backdrop-blur-md">
+              Book Showroom Fitting
+            </a>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-6 border-t border-slate-800/80 text-xs text-slate-300 font-bold">
+            <div class="flex items-center gap-2">
+              <span class="text-amber-400 text-base">✓</span>
+              <span>15-Minute Response SLA</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <span class="text-amber-400 text-base">✓</span>
+              <span>24/7 Phone Support</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <span class="text-amber-400 text-base">✓</span>
+              <span>Certified Sleep Specialists</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================== -->
+    <!-- SECTION 2: 3-CHANNEL DIRECT SUPPORT MATRIX -->
+    <!-- ========================================== -->
+    <section id="support-channels" class="py-16 sm:py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+      <div class="text-center max-w-3xl mx-auto space-y-4 mb-16">
+        <span class="text-xs font-bold tracking-widest text-amber-500 uppercase">Direct Channels</span>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-sleep-950 dark:text-white">Choose Your Support Channel</h2>
+        <p class="text-slate-600 dark:text-slate-300 text-base">Reach our dedicated concierge team via phone, priority email, or live video advisory.</p>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+        
+        <!-- Channel 1: Phone -->
+        <div class="bg-white dark:bg-sleep-900 p-6 sm:p-8 rounded-[2.5rem] border border-sand-200 dark:border-sleep-800 shadow-xl flex flex-col justify-between h-full space-y-6 hover:border-amber-400 transition-all">
+          <div class="space-y-4">
+            <div class="w-12 h-12 rounded-2xl bg-amber-400 text-slate-950 font-extrabold flex items-center justify-center text-xl">📞</div>
+            <h3 class="text-xl font-extrabold text-sleep-950 dark:text-white">Toll-Free VIP Line</h3>
+            <p class="text-xs text-slate-500 dark:text-slate-400 leading-relaxed">Speak directly with an advisory specialist for instant firmness guidance.</p>
+          </div>
+          <div class="pt-4 border-t border-sand-200 dark:border-sleep-800 mt-auto">
+            <a href="tel:18007666275" class="text-xs sm:text-sm font-extrabold text-amber-500 hover:underline inline-block whitespace-nowrap">1-800-SOMNA-SLEEP &rarr;</a>
+          </div>
+        </div>
+
+        <!-- Channel 2: Email -->
+        <div class="bg-white dark:bg-sleep-900 p-6 sm:p-8 rounded-[2.5rem] border border-sand-200 dark:border-sleep-800 shadow-xl flex flex-col justify-between h-full space-y-6 hover:border-amber-400 transition-all">
+          <div class="space-y-4">
+            <div class="w-12 h-12 rounded-2xl bg-amber-400 text-slate-950 font-extrabold flex items-center justify-center text-xl">✉️</div>
+            <h3 class="text-xl font-extrabold text-sleep-950 dark:text-white">Priority Concierge Email</h3>
+            <p class="text-xs text-slate-500 dark:text-slate-400 leading-relaxed">Send custom room dimensions, COI requests, or order inquiries with a 15-minute SLA.</p>
+          </div>
+          <div class="pt-4 border-t border-sand-200 dark:border-sleep-800 mt-auto">
+            <a href="mailto:concierge@somnasleep.com" class="text-xs sm:text-sm font-extrabold text-amber-500 hover:underline inline-block break-all">concierge@somnasleep.com &rarr;</a>
+          </div>
+        </div>
+
+        <!-- Channel 3: Video Consultation -->
+        <div class="bg-white dark:bg-sleep-900 p-6 sm:p-8 rounded-[2.5rem] border border-sand-200 dark:border-sleep-800 shadow-xl flex flex-col justify-between h-full space-y-6 hover:border-amber-400 transition-all sm:col-span-2 lg:col-span-1">
+          <div class="space-y-4">
+            <div class="w-12 h-12 rounded-2xl bg-amber-400 text-slate-950 font-extrabold flex items-center justify-center text-xl">📹</div>
+            <h3 class="text-xl font-extrabold text-sleep-950 dark:text-white">Virtual Showroom Video</h3>
+            <p class="text-xs text-slate-500 dark:text-slate-400 leading-relaxed">Book a 1-on-1 virtual walkthrough of our luxury mattress cores with a sleep engineer.</p>
+          </div>
+          <div class="pt-4 border-t border-sand-200 dark:border-sleep-800 mt-auto">
+            <button onclick="alert('Opening Virtual Video Booking Portal...');" class="text-xs sm:text-sm font-extrabold text-amber-500 hover:underline inline-block text-left">Book 15-Min Video Call &rarr;</button>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ========================================== -->
+    <!-- SECTION 3: FLAGSHIP SHOWROOM LOCATOR       -->
+    <!-- ========================================== -->
+    <section id="showroom-locations" class="py-16 sm:py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+      <div class="bg-white dark:bg-sleep-900 rounded-[2.5rem] border border-sand-200 dark:border-sleep-800 shadow-xl p-8 sm:p-12 lg:p-16 space-y-8">
+        
+        <div class="text-center max-w-3xl mx-auto space-y-4">
+          <span class="text-xs font-bold tracking-widest text-amber-500 uppercase">Test-Rest Experience</span>
+          <h2 class="text-3xl sm:text-4xl font-extrabold text-sleep-950 dark:text-white">Flagship Sleep Architecture Showrooms</h2>
+          <p class="text-slate-600 dark:text-slate-300 text-base">Visit our physical galleries for private 30-minute sleep trials.</p>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 max-w-3xl mx-auto">
+          <button onclick="updateShowroom('New York Soho Flagship', '482 Broome Street, Soho, NY 10013', 'Mon-Sun: 10:00 AM - 8:00 PM', 'images/showroom_ny.jpg')" class="p-4 rounded-2xl bg-amber-400 text-slate-950 font-bold text-xs">New York Soho</button>
+          <button onclick="updateShowroom('Los Angeles Beverly Hills Studio', '9601 Wilshire Blvd, Beverly Hills, CA 90210', 'Mon-Sun: 10:00 AM - 7:00 PM', 'images/showroom_la.jpg')" class="p-4 rounded-2xl bg-sand-100 dark:bg-sleep-800 border border-sand-300 dark:border-sleep-700 hover:border-amber-400 font-bold text-xs">Los Angeles</button>
+          <button onclick="updateShowroom('Chicago River North Gallery', '222 W Merchandise Mart Plaza, Chicago, IL 60654', 'Mon-Sat: 10:00 AM - 6:00 PM', 'images/showroom_chicago.jpg')" class="p-4 rounded-2xl bg-sand-100 dark:bg-sleep-800 border border-sand-300 dark:border-sleep-700 hover:border-amber-400 font-bold text-xs">Chicago</button>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center pt-4">
+          <div class="lg:col-span-6 space-y-4">
+            <h3 id="showroom-title" class="text-2xl font-extrabold text-sleep-950 dark:text-white">New York Soho Flagship</h3>
+            <p id="showroom-address" class="text-sm font-semibold text-slate-600 dark:text-slate-300">482 Broome Street, Soho, NY 10013</p>
+            <p id="showroom-hours" class="text-xs text-amber-500 font-bold">Hours: Mon-Sun: 10:00 AM - 8:00 PM</p>
+            <button onclick="alert('Appointment Request Submitted for Soho Flagship!');" class="px-6 py-3 rounded-full bg-amber-400 hover:bg-amber-300 text-slate-950 font-extrabold text-xs transition-all shadow-md">Book Private Fitting Appointment &rarr;</button>
+          </div>
+
+          <div class="lg:col-span-6">
+            <img id="showroom-img" src="images/showroom_ny.jpg" alt="Flagship Showroom View" class="rounded-[2rem] shadow-xl border border-sand-300 dark:border-sleep-800 w-full h-80 object-cover">
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ========================================== -->
+    <!-- SECTION 4: PRIORITY CONTACT FORM PORTAL    -->
+    <!-- ========================================== -->
+    <section id="contact-form" class="py-16 sm:py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        
+        <div class="lg:col-span-6 space-y-6">
+          <span class="text-xs font-bold tracking-widest text-amber-500 uppercase">Priority Message Desk</span>
+          <h2 class="text-3xl sm:text-4xl font-extrabold text-sleep-950 dark:text-white">Send A Direct Message To Our Sleep Engineers</h2>
+          <p class="text-slate-600 dark:text-slate-300 text-base leading-relaxed">
+            Whether you need custom dimension advice, order tracking, or warranty support, our dedicated specialists respond within 15 minutes.
+          </p>
+
+          <div class="space-y-3 text-xs font-bold text-slate-600 dark:text-slate-300">
+            <p class="flex items-center gap-2"><span class="text-amber-400 text-base">✓</span> Guaranteed Response SLA Under 15 Minutes</p>
+            <p class="flex items-center gap-2"><span class="text-amber-400 text-base">✓</span> Direct Escalation To Master Sleep Architect</p>
+            <p class="flex items-center gap-2"><span class="text-amber-400 text-base">✓</span> 100% Privacy & Encrypted Message Security</p>
+          </div>
+        </div>
+
+        <div class="lg:col-span-6 bg-white dark:bg-sleep-900 p-8 sm:p-10 rounded-[2.5rem] border border-sand-300 dark:border-sleep-800 shadow-xl space-y-6">
+          <form onsubmit="event.preventDefault(); alert('Priority Inquiry Submitted! Our Sleep Engineer Will Contact You Shortly.');" class="space-y-4">
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div>
+                <label class="block text-xs font-bold text-slate-700 dark:text-slate-300 mb-1">Full Name</label>
+                <input type="text" required placeholder="John Doe" class="w-full px-4 py-3 rounded-xl bg-sand-50 dark:bg-sleep-800 border border-sand-300 dark:border-sleep-700 text-sm focus:outline-none focus:ring-2 focus:ring-amber-400 text-sleep-900 dark:text-white">
+              </div>
+              <div>
+                <label class="block text-xs font-bold text-slate-700 dark:text-slate-300 mb-1">Email Address</label>
+                <input type="email" required placeholder="john@example.com" class="w-full px-4 py-3 rounded-xl bg-sand-50 dark:bg-sleep-800 border border-sand-300 dark:border-sleep-700 text-sm focus:outline-none focus:ring-2 focus:ring-amber-400 text-sleep-900 dark:text-white">
+              </div>
+            </div>
+
+            <div>
+              <label class="block text-xs font-bold text-slate-700 dark:text-slate-300 mb-1">Inquiry Topic</label>
+              <select required class="w-full px-4 py-3 rounded-xl bg-sand-50 dark:bg-sleep-800 border border-sand-300 dark:border-sleep-700 text-sm focus:outline-none focus:ring-2 focus:ring-amber-400 text-sleep-900 dark:text-white">
+                <option value="fitting">Custom Room Fitting & Dimensions</option>
+                <option value="order">Order Status & GPS Tracking</option>
+                <option value="coi">Building COI & Delivery Logistics</option>
+                <option value="trade">Trade Program & Architect Pricing</option>
+              </select>
+            </div>
+
+            <div>
+              <label class="block text-xs font-bold text-slate-700 dark:text-slate-300 mb-1">Message</label>
+              <textarea placeholder="Tell us about your room size, firmness preference, or order details..." rows="3" required class="w-full px-4 py-3 rounded-xl bg-sand-50 dark:bg-sleep-800 border border-sand-300 dark:border-sleep-700 text-sm focus:outline-none focus:ring-2 focus:ring-amber-400 text-sleep-900 dark:text-white"></textarea>
+            </div>
+
+            <button type="submit" class="w-full py-3.5 rounded-full bg-amber-400 hover:bg-amber-300 text-slate-950 font-extrabold text-sm transition-all shadow-md transform hover:-translate-y-0.5">Send Priority Inquiry Now</button>
+          </form>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ========================================== -->
+    <!-- SECTION 5: TRADE & DESIGNER PROGRAM       -->
+    <!-- ========================================== -->
+    <section id="trade-program" class="py-16 sm:py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+      <div class="text-center max-w-3xl mx-auto space-y-4 mb-16">
+        <span class="text-xs font-bold tracking-widest text-amber-500 uppercase">B2B & Trade Partners</span>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-sleep-950 dark:text-white">Architectural & Interior Design Trade Portal</h2>
+        <p class="text-slate-600 dark:text-slate-300 text-base">Exclusive privileges for interior designers, architects, and boutique hotel procurers.</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        
+        <div class="bg-white dark:bg-sleep-900 p-8 rounded-[2.5rem] border border-sand-200 dark:border-sleep-800 shadow-xl space-y-4">
+          <div class="w-12 h-12 rounded-2xl bg-amber-400 text-slate-950 font-bold flex items-center justify-center text-xl">📐</div>
+          <h3 class="text-xl font-extrabold text-sleep-950 dark:text-white">30% Trade Discount</h3>
+          <p class="text-xs text-slate-500 dark:text-slate-400">Exclusive tiered pricing for verified interior design and architecture firms.</p>
+        </div>
+
+        <div class="bg-white dark:bg-sleep-900 p-8 rounded-[2.5rem] border border-sand-200 dark:border-sleep-800 shadow-xl space-y-4">
+          <div class="w-12 h-12 rounded-2xl bg-amber-400 text-slate-950 font-bold flex items-center justify-center text-xl">💼</div>
+          <h3 class="text-xl font-extrabold text-sleep-950 dark:text-white">Dedicated Trade Manager</h3>
+          <p class="text-xs text-slate-500 dark:text-slate-400">Single point of contact for bulk hotel orders, custom sizes, and priority logistics.</p>
+        </div>
+
+        <div class="bg-white dark:bg-sleep-900 p-8 rounded-[2.5rem] border border-sand-200 dark:border-sleep-800 shadow-xl space-y-4">
+          <div class="w-12 h-12 rounded-2xl bg-amber-400 text-slate-950 font-bold flex items-center justify-center text-xl">🎨</div>
+          <h3 class="text-xl font-extrabold text-sleep-950 dark:text-white">Complimentary Swatch Kits</h3>
+          <p class="text-xs text-slate-500 dark:text-slate-400">Free physical material sample kits featuring organic cotton, natural latex, and wool covers.</p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ========================================== -->
+    <!-- SECTION 6: CONTACT FAQ ACCORDION           -->
+    <!-- ========================================== -->
+    <section id="contact-faq" class="py-16 sm:py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+      <div class="text-center max-w-3xl mx-auto space-y-4 mb-16">
+        <span class="text-xs font-bold tracking-widest text-amber-500 uppercase">Instant Answers</span>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-sleep-950 dark:text-white">Contact & Support FAQ</h2>
+        <p class="text-slate-600 dark:text-slate-300 text-base">Quick answers to common questions about customer care hours and order support.</p>
+      </div>
+
+      <div class="max-w-4xl mx-auto space-y-4">
+        
+        <div class="p-6 rounded-2xl bg-white dark:bg-sleep-900 border border-sand-300 dark:border-sleep-800 space-y-3 shadow-sm">
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+            <h4 class="font-extrabold text-sleep-950 dark:text-white text-base sm:text-lg">What are your customer support operating hours?</h4>
+            <span class="self-start sm:self-auto px-3 py-1 rounded-full bg-amber-400/20 text-amber-500 font-extrabold text-xs tracking-wider whitespace-nowrap">24/7 / 365</span>
+          </div>
+          <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+            Our phone lines and live chat concierges operate 24 hours a day, 7 days a week, 365 days a year. Email inquiries receive a guaranteed response under 15 minutes.
+          </p>
+        </div>
+
+        <div class="p-6 rounded-2xl bg-white dark:bg-sleep-900 border border-sand-300 dark:border-sleep-800 space-y-3 shadow-sm">
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+            <h4 class="font-extrabold text-sleep-950 dark:text-white text-base sm:text-lg">How do I track my mattress delivery in real-time?</h4>
+            <span class="self-start sm:self-auto px-3 py-1 rounded-full bg-amber-400/20 text-amber-500 font-extrabold text-xs tracking-wider whitespace-nowrap">GPS TRACKING</span>
+          </div>
+          <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+            Once your order leaves our facility, you receive an automated SMS with a live GPS driver map link showing real-time stop updates.
+          </p>
+        </div>
+
+        <div class="p-6 rounded-2xl bg-white dark:bg-sleep-900 border border-sand-300 dark:border-sleep-800 space-y-3 shadow-sm">
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+            <h4 class="font-extrabold text-sleep-950 dark:text-white text-base sm:text-lg">Do I need an appointment to visit a flagship showroom?</h4>
+            <span class="self-start sm:self-auto px-3 py-1 rounded-full bg-amber-400/20 text-amber-500 font-extrabold text-xs tracking-wider whitespace-nowrap">WALK-INS WELCOME</span>
+          </div>
+          <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+            Walk-ins are always welcome! However, booking a private appointment guarantees a dedicated 1-on-1 session with a senior sleep architect.
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ========================================== -->
+    <!-- SECTION 7: EMERGENCY HOTLINE CARD          -->
+    <!-- ========================================== -->
+    <section id="emergency-hotline" class="py-16 sm:py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+      <div class="bg-gradient-to-r from-sleep-950 via-slate-900 to-sleep-950 text-white rounded-[2.5rem] p-8 sm:p-12 lg:p-16 border border-slate-800 shadow-2xl grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        
+        <div class="lg:col-span-7 space-y-6">
+          <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-emerald-500/20 text-emerald-300 font-bold text-xs border border-emerald-500/30">
+            <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
+            <span>● 24/7 Emergency Line Operational</span>
+          </div>
+          <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold leading-tight">
+            Overnight Sleep Emergency Assistance
+          </h2>
+          <p class="text-slate-300 text-base leading-relaxed">
+            Having an urgent issue with your order or unboxing expansion tonight? Our overnight sleep team is available 24/7 to help immediately.
+          </p>
+        </div>
+
+        <div class="lg:col-span-5 bg-slate-900 p-8 rounded-[2rem] border border-slate-800 text-center space-y-4">
+          <span class="text-xs font-bold text-amber-400 uppercase tracking-widest">Instant Hotline Dispatch</span>
+          <h3 class="text-2xl font-extrabold text-white">1-800-SOMNA-HELP</h3>
+          <p class="text-xs text-slate-400">Zero hold times guaranteed.</p>
+          <a href="tel:18007666275" class="block w-full py-3.5 rounded-full bg-amber-400 hover:bg-amber-300 text-slate-950 font-extrabold text-sm transition-all shadow-md">Call VIP Hotline Now</a>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- LOGIN MODAL -->
+  <div id="login-modal" class="fixed inset-0 bg-slate-950/70 backdrop-blur-md z-50 flex items-center justify-center p-4 opacity-0 pointer-events-none transition-opacity duration-300">
+    <div class="bg-white dark:bg-sleep-900 rounded-3xl p-8 max-w-md w-full shadow-2xl border border-sand-200 dark:border-sleep-800 space-y-6 transform scale-95 transition-transform duration-300 relative">
+      <button onclick="closeLoginModal()" class="absolute top-6 right-6 text-slate-400 hover:text-slate-600 dark:hover:text-white">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+      </button>
+
+      <div class="space-y-2">
+        <h3 class="text-2xl font-extrabold text-sleep-950 dark:text-white">Sign In To Somna</h3>
+        <p class="text-xs text-slate-500 dark:text-slate-400">Access your concierge support portal.</p>
+      </div>
+
+      <form onsubmit="event.preventDefault(); alert('Signed In Successfully!'); closeLoginModal();" class="space-y-4">
+        <div>
+          <label class="block text-xs font-bold text-slate-700 dark:text-slate-300 mb-1">Email Address</label>
+          <input type="email" required placeholder="you@example.com" class="w-full px-4 py-3 rounded-xl bg-sand-50 dark:bg-sleep-800 border border-sand-300 dark:border-sleep-700 text-sm focus:outline-none text-sleep-900 dark:text-white">
+        </div>
+        <div>
+          <label class="block text-xs font-bold text-slate-700 dark:text-slate-300 mb-1">Password</label>
+          <input type="password" required placeholder="••••••••" class="w-full px-4 py-3 rounded-xl bg-sand-50 dark:bg-sleep-800 border border-sand-300 dark:border-sleep-700 text-sm focus:outline-none text-sleep-900 dark:text-white">
+        </div>
+        <button type="submit" class="w-full py-3.5 rounded-full bg-amber-400 hover:bg-amber-300 text-slate-950 font-bold text-sm transition-colors shadow-md">Sign In</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- ========================================== -->
+  <!-- COMPREHENSIVE FOOTER                      -->
+  <!-- ========================================== -->
+  <footer class="bg-sleep-950 text-slate-300 pt-16 pb-12 border-t border-sleep-800/80">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
+
+      <!-- Main Footer Columns -->
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-12">
+        
+        <!-- Left Brand & Social Icons -->
+        <div class="md:col-span-4 space-y-6">
+          <a href="index.html" class="flex items-center space-x-3 rtl:space-x-reverse">
+            <div class="w-10 h-10 rounded-xl bg-sleep-900 flex items-center justify-center text-amber-300 border border-sleep-800">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21.752 15.002A9.718 9.718 0 0118 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 003 11.25C3 16.635 7.365 21 12.75 21a9.003 9.003 0 008.354-5.646z"/></svg>
+            </div>
+            <span class="text-xl font-extrabold text-white">SOMNA SLEEP</span>
+          </a>
+          <p class="text-sm text-slate-400 max-w-sm">Crafting luxurious, ergonomic mattress solutions engineered for restorative night's rest.</p>
+          <div class="flex items-center space-x-3 rtl:space-x-reverse">
+            <a href="#" class="w-9 h-9 rounded-full bg-sleep-900 flex items-center justify-center hover:bg-amber-400 hover:text-slate-950 transition-colors">
+              <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+            </a>
+            <a href="#" class="w-9 h-9 rounded-full bg-sleep-900 flex items-center justify-center hover:bg-amber-400 hover:text-slate-950 transition-colors">
+              <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+            </a>
+            <a href="#" class="w-9 h-9 rounded-full bg-sleep-900 flex items-center justify-center hover:bg-amber-400 hover:text-slate-950 transition-colors">
+              <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Center Quick Links -->
+        <div class="md:col-span-4 grid grid-cols-1 sm:grid-cols-2 gap-6">
+          <div class="space-y-4">
+            <h4 class="text-sm font-bold text-white uppercase tracking-wider">VIP Support</h4>
+            <ul class="space-y-2 text-sm text-slate-400">
+              <li><a href="#contact-hero" class="hover:text-amber-300 transition-colors">Concierge Studio</a></li>
+              <li><a href="#support-channels" class="hover:text-amber-300 transition-colors">Direct Channels</a></li>
+              <li><a href="#showroom-locations" class="hover:text-amber-300 transition-colors">Showroom Locator</a></li>
+              <li><a href="#contact-form" class="hover:text-amber-300 transition-colors">Priority Desk</a></li>
+            </ul>
+          </div>
+
+          <div class="space-y-4">
+            <h4 class="text-sm font-bold text-white uppercase tracking-wider">Trade & FAQ</h4>
+            <ul class="space-y-2 text-sm text-slate-400">
+              <li><a href="#trade-program" class="hover:text-amber-300 transition-colors">Trade Portal</a></li>
+              <li><a href="#contact-faq" class="hover:text-amber-300 transition-colors">Support FAQ</a></li>
+              <li><a href="#emergency-hotline" class="hover:text-amber-300 transition-colors">Emergency Line</a></li>
+              <li><a href="delivery-clearance.html" class="hover:text-amber-300 transition-colors">Delivery Logistics</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Right Newsletter Subscription Pill -->
+        <div class="md:col-span-4 space-y-4">
+          <h4 class="text-sm font-bold text-white uppercase tracking-wider">Subscribe to Restful Updates</h4>
+          <p class="text-xs text-slate-400">Get $100 off your first mattress order plus exclusive sleep tips.</p>
+          <form onsubmit="event.preventDefault(); alert('Subscribed to Restful Updates!');" class="p-1.5 rounded-full bg-slate-900 border border-slate-700/80 flex items-center gap-2 w-full max-w-md">
+            <input type="email" placeholder="Enter your email" required class="w-full min-w-0 px-4 py-2 bg-transparent text-xs sm:text-sm text-white placeholder-slate-400 focus:outline-none">
+            <button type="submit" class="flex-shrink-0 whitespace-nowrap px-5 py-2 rounded-full bg-amber-400 hover:bg-amber-300 text-slate-950 font-bold text-xs transition-all shadow-md">Subscribe</button>
+          </form>
+        </div>
+
+      </div>
+
+      <div class="pt-8 border-t border-sleep-800 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500">
+        <p>&copy; 2026 SOMNA SLEEP INC. ALL RIGHTS RESERVED.</p>
+        <div class="flex items-center space-x-6 rtl:space-x-reverse">
+          <a href="#" class="hover:underline">Privacy Policy</a>
+          <a href="#" class="hover:underline">Terms of Service</a>
+          <a href="#" class="hover:underline">Cookie Preferences</a>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- ========================================== -->
+  <!-- JAVASCRIPT CONTROLLER                      -->
+  <!-- ========================================== -->
+  <script>
+    let currentTheme = localStorage.getItem('theme') || 'light';
+    let currentDir = localStorage.getItem('dir') || 'ltr';
+    let activeNavKey = 'contact';
+
+    document.addEventListener('DOMContentLoaded', () => {
+      initTheme();
+      initDir();
+      setActiveNav(activeNavKey);
+    });
+
+    function initTheme() {
+      if (currentTheme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+        document.documentElement.classList.add('dark');
+        currentTheme = 'dark';
+      } else {
+        document.documentElement.classList.remove('dark');
+        currentTheme = 'light';
+      }
+    }
+
+    function toggleDarkMode() {
+      if (document.documentElement.classList.contains('dark')) {
+        document.documentElement.classList.remove('dark');
+        localStorage.setItem('theme', 'light');
+        currentTheme = 'light';
+      } else {
+        document.documentElement.classList.add('dark');
+        localStorage.setItem('theme', 'dark');
+        currentTheme = 'dark';
+      }
+    }
+
+    function initDir() {
+      document.documentElement.setAttribute('dir', currentDir);
+      const l1 = document.getElementById('rtl-status-label');
+      const l2 = document.getElementById('mobile-rtl-status-label');
+      if (l1) l1.innerText = currentDir.toUpperCase();
+      if (l2) l2.innerText = currentDir.toUpperCase();
+    }
+
+    function toggleRTL() {
+      currentDir = currentDir === 'ltr' ? 'rtl' : 'ltr';
+      document.documentElement.setAttribute('dir', currentDir);
+      localStorage.setItem('dir', currentDir);
+      const l1 = document.getElementById('rtl-status-label');
+      const l2 = document.getElementById('mobile-rtl-status-label');
+      if (l1) l1.innerText = currentDir.toUpperCase();
+      if (l2) l2.innerText = currentDir.toUpperCase();
+    }
+
+    function setActiveNav(navKey) {
+      activeNavKey = navKey;
+      const navKeys = ['home', 'mattresses', 'size-guide', 'room-clearance', 'delivery-clearance', 'box-specs', 'contact'];
+      
+      navKeys.forEach(key => {
+        const btn = document.getElementById('nav-btn-' + key);
+        if (btn) {
+          if (key === navKey) {
+            btn.className = 'main-nav-btn inline-flex items-center gap-1 px-3 py-1.5 rounded-full text-amber-400 font-bold text-xs transition-all duration-200 focus:outline-none';
+          } else {
+            btn.className = 'main-nav-btn inline-flex items-center gap-1 px-3 py-1.5 rounded-full text-slate-300 hover:text-amber-400 hover:bg-slate-800/80 font-medium text-xs transition-all duration-200';
+          }
+        }
+        const mBtn = document.getElementById('mobile-nav-btn-' + key);
+        if (mBtn) {
+          if (key === navKey) {
+            mBtn.className = 'flex items-center gap-3 px-4 py-3 text-amber-500 font-bold text-base rounded-xl bg-sand-100 dark:bg-sleep-800';
+          } else {
+            mBtn.className = 'flex items-center gap-3 px-4 py-3 text-slate-800 dark:text-slate-200 font-semibold text-base rounded-xl hover:bg-sand-100 dark:hover:bg-sleep-800/60';
+          }
+        }
+      });
+    }
+
+    function setActiveHome(homeChoice) {
+      if (homeChoice === 'home1') {
+        window.location.href = 'index.html';
+      } else if (homeChoice === 'home2') {
+        window.location.href = 'home2.html';
+      }
+    }
+
+    function toggleMobileMenu(open) {
+      const drawer = document.getElementById('mobile-drawer');
+      const backdrop = document.getElementById('mobile-menu-backdrop');
+      
+      if (open) {
+        if (drawer) drawer.classList.add('open');
+        if (backdrop) {
+          backdrop.classList.remove('opacity-0', 'pointer-events-none');
+          backdrop.classList.add('opacity-100');
+        }
+        document.body.style.overflow = 'hidden';
+      } else {
+        if (drawer) drawer.classList.remove('open');
+        if (backdrop) {
+          backdrop.classList.remove('opacity-100');
+          backdrop.classList.add('opacity-0', 'pointer-events-none');
+        }
+        document.body.style.overflow = '';
+      }
+    }
+
+    function toggleMobileHomeSubmenu() {
+      const submenu = document.getElementById('mobile-home-submenu');
+      const chevron = document.getElementById('mobile-home-chevron');
+      if (submenu) {
+        const isHidden = submenu.classList.contains('hidden') || submenu.style.display === 'none' || getComputedStyle(submenu).display === 'none';
+        if (isHidden) {
+          submenu.style.display = 'block';
+          submenu.classList.remove('hidden');
+          if (chevron) chevron.classList.add('rotate-180');
+        } else {
+          submenu.style.display = 'none';
+          submenu.classList.add('hidden');
+          if (chevron) chevron.classList.remove('rotate-180');
+        }
+      }
+    }
+
+    function openLoginModal() {
+      const modal = document.getElementById('login-modal');
+      if (modal) {
+        modal.classList.remove('opacity-0', 'pointer-events-none');
+        modal.classList.add('opacity-100');
+        if (modal.firstElementChild) {
+          modal.firstElementChild.classList.remove('scale-95');
+          modal.firstElementChild.classList.add('scale-100');
+        }
+        document.body.style.overflow = 'hidden';
+      }
+    }
+
+    function closeLoginModal() {
+      const modal = document.getElementById('login-modal');
+      if (modal) {
+        modal.classList.remove('opacity-100');
+        modal.classList.add('opacity-0', 'pointer-events-none');
+        if (modal.firstElementChild) {
+          modal.firstElementChild.classList.remove('scale-100');
+          modal.firstElementChild.classList.add('scale-95');
+        }
+        document.body.style.overflow = '';
+      }
+    }
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        toggleMobileMenu(false);
+        closeLoginModal();
+      }
+    });
+    function updateShowroom(name, address, hours, imgFile) {
+      const sTitle = document.getElementById('showroom-title');
+      const sAddr = document.getElementById('showroom-address');
+      const sHours = document.getElementById('showroom-hours');
+      const sImg = document.getElementById('showroom-img');
+      if (sTitle) sTitle.innerText = name;
+      if (sAddr) sAddr.innerText = address;
+      if (sHours) sHours.innerText = 'Hours: ' + hours;
+      if (sImg) sImg.src = imgFile;
+    }
+  </script>
+</body>
+</html>

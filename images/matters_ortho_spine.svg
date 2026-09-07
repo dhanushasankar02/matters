@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="800" height="600">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0f172a"/>
+      <stop offset="50%" stop-color="#1e293b"/>
+      <stop offset="100%" stop-color="#0a0f1d"/>
+    </linearGradient>
+    <linearGradient id="mattressTop" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#f8fafc"/>
+      <stop offset="100%" stop-color="#e2e8f0"/>
+    </linearGradient>
+    <linearGradient id="spineZone" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#9333ea"/>
+      <stop offset="100%" stop-color="#c084fc"/>
+    </linearGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="800" height="600" fill="url(#bgGrad)"/>
+  
+  <!-- Bed Frame -->
+  <rect x="100" y="320" width="600" height="180" rx="16" fill="#334155" stroke="#475569" stroke-width="4"/>
+  
+  <!-- Mattress Core -->
+  <rect x="110" y="220" width="580" height="110" rx="20" fill="url(#mattressTop)" stroke="#cbd5e1" stroke-width="4"/>
+  
+  <!-- Quilted Fabric Pattern Lines -->
+  <path d="M 140 240 L 660 240 M 140 270 L 660 270 M 140 300 L 660 300" stroke="#cbd5e1" stroke-width="2" stroke-dasharray="8 8"/>
+  
+  <!-- Lumbar Support Highlighting Zone -->
+  <rect x="300" y="215" width="200" height="120" rx="12" fill="url(#spineZone)" opacity="0.3" stroke="#c084fc" stroke-width="3"/>
+  <text x="400" y="278" font-family="'Plus Jakarta Sans', sans-serif" font-weight="800" font-size="18" fill="#ffffff" text-anchor="middle">TARGETED LUMBAR ZONE</text>
+  <text x="400" y="302" font-family="'Plus Jakarta Sans', sans-serif" font-weight="600" font-size="14" fill="#fde047" text-anchor="middle">7-Zone High-Density Support</text>
+  
+  <!-- Badge -->
+  <rect x="130" y="150" width="220" height="42" rx="21" fill="#9333ea"/>
+  <text x="240" y="176" font-family="'Plus Jakarta Sans', sans-serif" font-weight="800" font-size="14" fill="#ffffff" text-anchor="middle">SPINAL RELIEF SERIES</text>
+  
+  <!-- Decorative Lights -->
+  <circle cx="200" cy="100" r="60" fill="#fde047" opacity="0.08"/>
+  <circle cx="600" cy="100" r="60" fill="#fde047" opacity="0.08"/>
+</svg>

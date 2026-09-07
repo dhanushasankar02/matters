@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="800" height="600">
+  <defs>
+    <linearGradient id="bgGrad2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0f172a"/>
+      <stop offset="100%" stop-color="#1e1b4b"/>
+    </linearGradient>
+    <linearGradient id="leftSide" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="100%" stop-color="#f1f5f9"/>
+    </linearGradient>
+    <linearGradient id="rightSide" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#f8fafc"/>
+      <stop offset="100%" stop-color="#e2e8f0"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="800" height="600" fill="url(#bgGrad2)"/>
+  
+  <!-- Frame -->
+  <rect x="80" y="280" width="640" height="200" rx="20" fill="#312e81" stroke="#4338ca" stroke-width="4"/>
+  
+  <!-- Left Mattress (Plush 4/10) -->
+  <rect x="95" y="180" width="295" height="130" rx="16" fill="url(#leftSide)" stroke="#e0e7ff" stroke-width="3"/>
+  <rect x="115" y="200" width="130" height="32" rx="16" fill="#e0e7ff"/>
+  <text x="180" y="221" font-family="'Plus Jakarta Sans', sans-serif" font-weight="800" font-size="13" fill="#3730a3" text-anchor="middle">LEFT: PLUSH (4/10)</text>
+  
+  <!-- Center Divider Line -->
+  <line x1="400" y1="170" x2="400" y2="320" stroke="#f59e0b" stroke-width="6" stroke-dasharray="6 4"/>
+  
+  <!-- Right Mattress (Firm 8/10) -->
+  <rect x="410" y="180" width="295" height="130" rx="16" fill="url(#rightSide)" stroke="#cbd5e1" stroke-width="3"/>
+  <rect x="430" y="200" width="130" height="32" rx="16" fill="#fef3c7"/>
+  <text x="495" y="221" font-family="'Plus Jakarta Sans', sans-serif" font-weight="800" font-size="13" fill="#b45309" text-anchor="middle">RIGHT: FIRM (8/10)</text>
+  
+  <!-- Headline Title Badge -->
+  <rect x="250" y="100" width="300" height="48" rx="24" fill="#f59e0b"/>
+  <text x="400" y="130" font-family="'Plus Jakarta Sans', sans-serif" font-weight="800" font-size="16" fill="#0f172a" text-anchor="middle">DUAL COMFORT SPLIT-KING</text>
+  
+  <text x="400" y="380" font-family="'Plus Jakarta Sans', sans-serif" font-weight="700" font-size="16" fill="#e0e7ff" text-anchor="middle">Independent Dual-Firmness Controls For Couples</text>
+</svg>

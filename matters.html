@@ -1,0 +1,1027 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SOMNA SLEEP | Mattress Engineering & Catalog (Mattresses)</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='25' fill='%230F172A'/%3E%3Cpath d='M75 50.5A29.7 29.7 0 0 1 45.3 80.2 29.7 29.7 0 0 1 15.6 50.5 29.7 29.7 0 0 1 38.8 21.8a27.6 27.6 0 0 0 6.5 17.7A27.7 27.7 0 0 0 63 46a27.6 27.6 0 0 0 12-4.5z' fill='%23FACC15'/%3E%3C/svg%3E">
+  
+  <!-- Tailwind CSS CDN with custom config -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            sleep: {
+              50: '#f4f6fa',
+              100: '#e6ebf4',
+              200: '#d1dceb',
+              300: '#b0c3de',
+              400: '#89a4cd',
+              500: '#6886bd',
+              600: '#526ca9',
+              700: '#43568b',
+              800: '#3a4972',
+              900: '#0F172A',
+              950: '#0a0f1d',
+            },
+            amber: {
+              300: '#fde047',
+              400: '#facc15',
+              500: '#eab308',
+            },
+            sand: {
+              50: '#fbfaf8',
+              100: '#f5f2eb',
+              200: '#e9e3d5',
+              300: '#d9cfbb',
+              400: '#c5b59b',
+            }
+          },
+          boxShadow: {
+            'sleep-soft': '0 10px 30px -10px rgba(15, 23, 42, 0.08)',
+            'sleep-hover': '0 25px 50px -12px rgba(15, 23, 42, 0.18)',
+            'glow-amber': '0 0 25px rgba(250, 204, 21, 0.25)',
+          }
+        }
+      }
+    };
+  </script>
+
+  <!-- Google Fonts: Plus Jakarta Sans for luxury feel -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style type="text/tailwindcss">
+    @layer base {
+      *, ::before, ::after {
+        box-sizing: border-box;
+      }
+      html {
+        overflow-x: hidden;
+        max-width: 100vw;
+        -webkit-text-size-adjust: 100%;
+      }
+      body {
+        font-family: 'Plus Jakarta Sans', sans-serif;
+        overflow-x: hidden;
+        width: 100%;
+        max-width: 100vw;
+        @apply bg-sand-50 text-slate-800 dark:bg-sleep-950 dark:text-slate-100 antialiased transition-colors duration-300;
+      }
+      img, video, iframe, canvas, svg {
+        max-width: 100%;
+        height: auto;
+      }
+      h1, h2, h3, h4, h5, h6, p, span, a, button {
+        overflow-wrap: break-word;
+        word-break: break-word;
+      }
+    }
+
+    .dropdown-menu {
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(8px);
+      transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    
+    .dropdown-group:hover .dropdown-menu,
+    .dropdown-group:focus-within .dropdown-menu {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+    }
+
+    #mobile-drawer {
+      transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    #mobile-drawer.open {
+      transform: translateX(0);
+    }
+    [dir="rtl"] #mobile-drawer {
+      transform: translateX(100%);
+    }
+    [dir="rtl"] #mobile-drawer.open {
+      transform: translateX(0);
+    }
+    [dir="ltr"] #mobile-drawer {
+      transform: translateX(-100%);
+    }
+    [dir="ltr"] #mobile-drawer.open {
+      transform: translateX(0);
+    }
+  </style>
+</head>
+<body class="min-h-screen flex flex-col justify-between pt-20">
+
+  <!-- ========================================== -->
+  <!-- 1. HEADER (DEEP MIDNIGHT SLEEP NAVY)      -->
+  <!-- ========================================== -->
+  <header class="fixed top-0 left-0 right-0 z-50 w-full bg-[#0F172A]/95 backdrop-blur-md border-b border-slate-800/80 shadow-xl text-white transition-colors duration-300">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-20 gap-4 flex-nowrap">
+        
+        <!-- 1. LEFT: BRAND LOGO -->
+        <a href="index.html" id="brand-logo-link" class="flex-shrink-0 flex items-center space-x-3 rtl:space-x-reverse focus:outline-none focus:ring-2 focus:ring-amber-400 rounded-xl p-1 group">
+          <div class="w-10 h-10 rounded-xl bg-slate-800 flex items-center justify-center text-amber-300 shadow-md group-hover:scale-105 transition-transform border border-slate-700">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21.752 15.002A9.718 9.718 0 0118 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 003 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 009.002-5.998z"/>
+            </svg>
+          </div>
+          <span class="text-xl font-extrabold text-white tracking-tight">SOMNA SLEEP</span>
+        </a>
+
+        <!-- 2. RIGHT SIDE: NAVIGATION LINKS & CONTROLS GROUP -->
+        <div class="flex items-center space-x-4 lg:space-x-6 rtl:space-x-reverse flex-nowrap">
+          
+          <!-- DESKTOP NAVIGATION LINKS (RIGHT SIDE ALIGNED) -->
+          <nav class="hidden lg:flex items-center space-x-1 xl:space-x-2 rtl:space-x-reverse font-medium text-sm whitespace-nowrap">
+            
+            <!-- HOME DROPDOWN MENU -->
+            <div class="relative dropdown-group py-5">
+              <button id="nav-btn-home" 
+                      type="button" 
+                      onclick="setActiveNav('home')"
+                      aria-expanded="false" 
+                      aria-haspopup="true"
+                      class="main-nav-btn inline-flex items-center gap-1.5 px-3.5 py-2 rounded-full text-slate-300 hover:text-amber-400 hover:bg-slate-800/80 font-medium text-base transition-all duration-200 focus:outline-none">
+                <span id="current-home-label">Home</span>
+                <!-- Chevron Down Arrow v on Right Side -->
+                <svg id="home-arrow-icon" class="w-3.5 h-3.5 text-slate-400 dark:text-slate-200 group-hover:text-amber-400 transition-transform duration-200 group-hover:rotate-180 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"/>
+                </svg>
+              </button>
+
+              <!-- Dropdown Container -->
+              <div id="home-dropdown-menu" 
+                   class="dropdown-menu absolute top-full w-44 p-1.5 bg-slate-900 border border-slate-700/80 rounded-2xl shadow-2xl z-50">
+
+                <!-- Option 1: Home 1 -->
+                <a href="index.html" 
+                   id="option-home1"
+                   onclick="setActiveHome('home1')"
+                   class="home-option-link flex items-center justify-between px-3.5 py-2.5 rounded-xl hover:bg-slate-800/80 text-slate-200 hover:text-amber-300 font-semibold text-sm transition-all duration-200">
+                  <span>Home 1</span>
+                  <span id="badge-home1" class="w-2 h-2 rounded-full bg-transparent"></span>
+                </a>
+
+                <!-- Option 2: Home 2 -->
+                <a href="home2.html" 
+                   id="option-home2"
+                   onclick="setActiveHome('home2')"
+                   class="home-option-link flex items-center justify-between px-3.5 py-2.5 rounded-xl hover:bg-slate-800/80 text-slate-200 hover:text-amber-300 font-semibold text-sm transition-all duration-200">
+                  <span>Home 2</span>
+                  <span id="badge-home2" class="w-2 h-2 rounded-full bg-transparent"></span>
+                </a>
+
+              </div>
+            </div>
+
+            <!-- NAV ITEMS (MATTRESSES ACTIVE) -->
+            <a href="matters.html" id="nav-btn-mattresses" onclick="setActiveNav('mattresses')" class="main-nav-btn px-3 py-1.5 rounded-full text-amber-400 font-bold text-xs transition-all duration-200">
+              Mattresses
+            </a>
+
+            <a href="size_guide.html" id="nav-btn-size-guide" onclick="setActiveNav('size-guide')" class="main-nav-btn px-3 py-1.5 rounded-full text-slate-300 hover:text-amber-400 hover:bg-slate-800/80 font-medium text-xs transition-all duration-200">
+              Size Guide
+            </a>
+
+            <a href="room-clearance.html" id="nav-btn-room-clearance" onclick="setActiveNav('room-clearance')" class="main-nav-btn px-3 py-1.5 rounded-full text-slate-300 hover:text-amber-400 hover:bg-slate-800/80 font-medium text-xs transition-all duration-200">
+              Room Clearance
+            </a>
+
+            <a href="delivery-clearance.html" id="nav-btn-delivery-clearance" onclick="setActiveNav('delivery-clearance')" class="main-nav-btn px-3 py-1.5 rounded-full text-slate-300 hover:text-amber-400 hover:bg-slate-800/80 font-medium text-xs transition-all duration-200">
+              Delivery Logistics
+            </a>
+
+            <a href="box-dimensions.html" id="nav-btn-box-specs" onclick="setActiveNav('box-specs')" class="main-nav-btn px-3 py-1.5 rounded-full text-slate-300 hover:text-amber-400 hover:bg-slate-800/80 font-medium text-xs transition-all duration-200">
+              Box Specs
+            </a>
+
+            <a href="contact.html" id="nav-btn-contact" onclick="setActiveNav('contact')" class="main-nav-btn px-3 py-1.5 rounded-full text-slate-300 hover:text-amber-400 hover:bg-slate-800/80 font-medium text-xs transition-all duration-200">
+              Contact
+            </a>
+
+          </nav>
+
+          <!-- RIGHT-SIDE CONTROLS (DESKTOP CONTROLS & MOBILE HAMBURGER TRIGGER) -->
+          <div class="flex-shrink-0 flex items-center space-x-2 sm:space-x-3 rtl:space-x-reverse whitespace-nowrap">
+
+            <!-- DESKTOP-ONLY CONTROLS (DARK MODE, RTL, LOGIN) -->
+            <div class="hidden lg:flex items-center space-x-2 xl:space-x-3 rtl:space-x-reverse">
+              <!-- DARK MODE TOGGLE BUTTON -->
+              <button id="theme-toggle-btn" 
+                      type="button" 
+                      onclick="toggleDarkMode()" 
+                      aria-label="Toggle Dark Mode"
+                      title="Toggle Light / Dark Mode"
+                      class="p-2.5 rounded-full text-slate-300 hover:bg-slate-800 focus:outline-none focus:ring-2 focus:ring-amber-400 transition-all duration-200 hover:scale-105 active:scale-95">
+                <svg id="theme-toggle-dark-icon" class="w-5 h-5 block dark:hidden text-amber-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21.752 15.002A9.718 9.718 0 0118 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 003 11.25C3 16.635 7.365 21 12.75 21a9.003 9.003 0 008.354-5.646z"/>
+                </svg>
+                <svg id="theme-toggle-light-icon" class="w-5 h-5 hidden dark:block text-amber-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v2.25m6.364.386l-1.591 1.591M21 12h-2.25m-.386 6.364l-1.591-1.591M12 18.75V21m-4.773-4.227l-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0z"/>
+                </svg>
+              </button>
+
+              <!-- LTR / RTL DIRECTION TOGGLE BUTTON -->
+              <button id="rtl-toggle-btn" 
+                      type="button" 
+                      onclick="toggleRTL()" 
+                      aria-label="Toggle Text Direction LTR or RTL"
+                      title="Toggle LTR / RTL Direction"
+                      class="px-2.5 py-1.5 rounded-full text-xs font-semibold bg-slate-800 text-slate-200 border border-slate-700 hover:bg-slate-700 transition-all duration-200 flex items-center gap-1.5 focus:outline-none focus:ring-2 focus:ring-amber-400">
+                <svg class="w-4 h-4 text-amber-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7.5 21L3 16.5m0 0L7.5 12M3 16.5h13.5m0-13.5L21 7.5m0 0L16.5 12M21 7.5H7.5"/>
+                </svg>
+                <span id="rtl-status-label" class="tracking-wide">LTR</span>
+              </button>
+
+              <!-- LOGIN BUTTON -->
+              <a href="login.html" 
+                 class="flex items-center gap-2 px-5 py-2 rounded-full bg-amber-400 hover:bg-amber-300 text-slate-950 text-xs font-bold shadow-md hover:shadow-lg transition-all duration-200 transform hover:-translate-y-0.5 active:translate-y-0">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z"/>
+                </svg>
+                <span>Log In</span>
+              </a>
+            </div>
+
+            <!-- HAMBURGER BUTTON FOR TABLET / MOBILE -->
+            <button id="mobile-menu-trigger" 
+                    type="button" 
+                    onclick="toggleMobileMenu(true)"
+                    aria-label="Open navigation menu"
+                    class="lg:hidden p-2.5 rounded-2xl text-slate-100 hover:bg-slate-800 focus:outline-none focus:ring-2 focus:ring-amber-400 transition-colors">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"/>
+              </svg>
+            </button>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </header>
+
+  <!-- MOBILE SLIDE-OUT DRAWER -->
+  <div id="mobile-menu-backdrop" 
+       onclick="toggleMobileMenu(false)"
+       class="fixed inset-0 bg-slate-950/60 backdrop-blur-sm z-50 opacity-0 pointer-events-none transition-opacity duration-300 lg:hidden"></div>
+
+  <aside id="mobile-drawer" 
+         class="fixed top-0 left-0 bottom-0 w-80 max-w-[85vw] bg-white dark:bg-sleep-900 z-50 shadow-2xl flex flex-col justify-between p-6 overflow-y-auto lg:hidden">
+    
+    <div class="space-y-6">
+      <div class="flex items-center justify-between pb-4 border-b border-sand-200 dark:border-sleep-800">
+        <div class="flex items-center space-x-3 rtl:space-x-reverse">
+          <div class="w-9 h-9 rounded-lg bg-sleep-900 dark:bg-sleep-800 flex items-center justify-center text-amber-300">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21.752 15.002A9.718 9.718 0 0118 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 003 11.25C3 16.635 7.365 21 12.75 21a9.003 9.003 0 008.354-5.646z"/></svg>
+          </div>
+          <span class="text-lg font-bold text-sleep-900 dark:text-white">SOMNA SLEEP</span>
+        </div>
+        <button onclick="toggleMobileMenu(false)" class="p-2 rounded-xl text-slate-500 hover:bg-sand-100 dark:hover:bg-sleep-800">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+        </button>
+      </div>
+
+      <div class="rounded-2xl bg-sand-100/70 dark:bg-sleep-800/40 p-2 space-y-1">
+        <button onclick="toggleMobileHomeSubmenu()" class="w-full flex items-center justify-between px-3 py-2.5 text-slate-900 dark:text-white font-semibold text-base rounded-xl hover:bg-sand-200 dark:hover:bg-sleep-800">
+          <span>Home</span>
+          <svg id="mobile-home-chevron" class="w-4 h-4 text-slate-400 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"/></svg>
+        </button>
+        <div id="mobile-home-submenu" class="hidden pl-8 rtl:pr-8 rtl:pl-0 space-y-1 py-1">
+          <a href="index.html"  class="flex items-center justify-between py-2 px-3 text-sm rounded-lg font-medium text-slate-600 dark:text-slate-300 hover:bg-white/50 dark:hover:bg-sleep-800/40">
+            <span>Home 1</span>
+          </a>
+          <a href="home2.html"  class="flex items-center justify-between py-2 px-3 text-sm rounded-lg font-medium text-slate-600 dark:text-slate-300 hover:bg-white/50 dark:hover:bg-sleep-800/40">
+            <span>Home 2</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="space-y-1">
+        <a href="matters.html" id="mobile-nav-btn-mattresses" onclick="toggleMobileMenu(false)" class="flex items-center gap-3 px-4 py-3 text-amber-500 font-bold text-base rounded-xl bg-sand-100 dark:bg-sleep-800">Mattresses</a>
+        <a href="size_guide.html" id="mobile-nav-btn-size-guide" onclick="toggleMobileMenu(false)" class="flex items-center gap-3 px-4 py-3 text-slate-800 dark:text-slate-200 font-semibold text-base rounded-xl hover:bg-sand-100 dark:hover:bg-sleep-800/60">Size Guide</a>
+        <a href="room-clearance.html" id="mobile-nav-btn-room-clearance" onclick="toggleMobileMenu(false)" class="flex items-center gap-3 px-4 py-3 text-slate-800 dark:text-slate-200 font-semibold text-base rounded-xl hover:bg-sand-100 dark:hover:bg-sleep-800/60">Room Clearance</a>
+        <a href="delivery-clearance.html" id="mobile-nav-btn-delivery-clearance" onclick="toggleMobileMenu(false)" class="flex items-center gap-3 px-4 py-3 text-slate-800 dark:text-slate-200 font-semibold text-base rounded-xl hover:bg-sand-100 dark:hover:bg-sleep-800/60">Delivery Logistics</a>
+        <a href="box-dimensions.html" id="mobile-nav-btn-box-specs" onclick="toggleMobileMenu(false)" class="flex items-center gap-3 px-4 py-3 text-slate-800 dark:text-slate-200 font-semibold text-base rounded-xl hover:bg-sand-100 dark:hover:bg-sleep-800/60">Box Specs</a>
+        <a href="contact.html" id="mobile-nav-btn-contact" onclick="toggleMobileMenu(false)" class="flex items-center gap-3 px-4 py-3 text-slate-800 dark:text-slate-200 font-semibold text-base rounded-xl hover:bg-sand-100 dark:hover:bg-sleep-800/60">Contact</a>
+      </div>
+    </div>
+
+    <div class="pt-6 border-t border-sand-200 dark:border-sleep-800 space-y-3">
+      <!-- Dark Mode & RTL Controls inside Mobile Hamburger Menu -->
+      <div class="flex items-center justify-between p-2 rounded-2xl bg-sand-100/80 dark:bg-sleep-800/60 border border-sand-200 dark:border-sleep-700/80">
+        <!-- Mobile Dark Mode Toggle Button -->
+        <button type="button" onclick="toggleDarkMode()" class="flex items-center gap-2 px-3 py-2 rounded-xl text-xs font-bold text-slate-800 dark:text-slate-200 hover:bg-sand-200 dark:hover:bg-sleep-800 transition-all">
+          <svg class="w-4 h-4 text-amber-500 dark:text-amber-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21.752 15.002A9.718 9.718 0 0118 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 003 11.25C3 16.635 7.365 21 12.75 21a9.003 9.003 0 008.354-5.646z"/></svg>
+          <span>Theme</span>
+        </button>
+
+        <!-- Mobile RTL Toggle Button -->
+        <button type="button" onclick="toggleRTL()" class="flex items-center gap-2 px-3 py-2 rounded-xl text-xs font-bold text-slate-800 dark:text-slate-200 hover:bg-sand-200 dark:hover:bg-sleep-800 transition-all">
+          <svg class="w-4 h-4 text-amber-500 dark:text-amber-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7.5 21L3 16.5m0 0L7.5 12M3 16.5h13.5m0-13.5L21 7.5m0 0L16.5 12M21 7.5H7.5"/></svg>
+          <span id="mobile-rtl-status-label" class="tracking-wide">LTR</span>
+        </button>
+      </div>
+
+      <a href="login.html" onclick="toggleMobileMenu(false);" class="w-full flex items-center justify-center gap-2 py-3 rounded-full bg-amber-400 text-slate-950 font-bold shadow-md">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z"/></svg>
+        <span>Log In</span>
+      </a>
+    </div>
+  </aside>
+
+  <!-- MAIN PAGE CONTENT (7 UNIQUE SECTIONS FOR MATTERS.HTML) -->
+  <main class="flex-grow">
+    
+    <!-- ========================================== -->
+    <!-- SECTION 1: INTERACTIVE FIRMNESS HERO      -->
+    <!-- ========================================== -->
+    <section id="matters-hero" class="relative overflow-hidden py-16 lg:py-24 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-sand-100/60 to-sand-50 dark:from-sleep-900 dark:to-sleep-950">
+      <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        
+        <!-- Left Hero Text & Interactive Slider -->
+        <div class="lg:col-span-7 space-y-6">
+          <span class="inline-block px-4 py-1.5 rounded-full bg-amber-400/20 text-amber-700 dark:text-amber-300 font-bold text-xs uppercase tracking-wider border border-amber-400/30">
+            Precision Orthopedic Engineering
+          </span>
+          <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-sleep-950 dark:text-white leading-[1.15]">
+            Custom Firmness <br class="hidden sm:block"/>
+            <span class="text-transparent bg-clip-text bg-gradient-to-r from-amber-500 to-amber-600">Built For Your Body</span>
+          </h1>
+          <p class="text-base sm:text-lg text-slate-600 dark:text-slate-300 leading-relaxed font-medium">
+            Slide the gauge below to preview how our adaptive 5-layer system responds to soft contouring, medium balance, or firm orthopedic spinal support.
+          </p>
+
+          <!-- Interactive Range Slider Box -->
+          <div class="p-6 rounded-3xl bg-white dark:bg-sleep-900 border border-sand-200 dark:border-sleep-800 shadow-xl space-y-4">
+            <div class="flex items-center justify-between text-xs font-extrabold uppercase text-slate-500 dark:text-slate-400">
+              <span>Soft Plush (4/10)</span>
+              <span id="firmness-level-label" class="text-base text-amber-500 font-extrabold">Medium Balanced (6.5/10)</span>
+              <span>Extra Firm (9/10)</span>
+            </div>
+
+            <input type="range" min="1" max="3" value="2" id="firmness-range-slider" oninput="updateFirmnessPreview(this.value)" class="w-full h-3 bg-sand-200 dark:bg-sleep-800 rounded-lg appearance-none cursor-pointer accent-amber-400">
+
+            <div class="pt-2 flex items-center justify-between text-xs text-slate-500 dark:text-slate-400">
+              <span class="flex items-center gap-1">✓ Side Sleepers</span>
+              <span class="flex items-center gap-1">✓ Back & Combination</span>
+              <span class="flex items-center gap-1">✓ Heavy Weight Support</span>
+            </div>
+          </div>
+
+          <div class="flex flex-col sm:flex-row items-center gap-4 pt-2">
+            <a href="#matters-catalog" class="w-full sm:w-auto px-8 py-4 rounded-full bg-sleep-900 hover:bg-sleep-800 dark:bg-amber-400 dark:hover:bg-amber-300 text-white dark:text-sleep-950 font-bold text-base shadow-lg transition-all">Explore All Models</a>
+            <a href="#size-guide" class="w-full sm:w-auto px-8 py-4 rounded-full bg-white dark:bg-sleep-900 border border-sand-300 dark:border-sleep-700 text-sleep-950 dark:text-slate-100 font-semibold text-base">View Size Dimensions</a>
+          </div>
+        </div>
+
+        <!-- Right Hero Visual -->
+        <div class="lg:col-span-5">
+          <div class="relative rounded-[2.5rem] overflow-hidden shadow-2xl border border-sand-300 dark:border-sleep-800 group">
+            <img id="cutaway-preview-img" src="images/matters_cutaway.jpg" alt="Mattress Layer Cutaway" class="w-full h-[450px] object-cover group-hover:scale-105 transition-transform duration-700">
+            <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent p-6 flex flex-col justify-end">
+              <span class="px-3 py-1 rounded-full bg-amber-400 text-slate-950 font-bold text-xs w-max mb-2">CUTAWAY ANATOMY</span>
+              <h3 id="cutaway-preview-title" class="text-2xl font-extrabold text-white">Medium-Balanced Hybrid</h3>
+              <p id="cutaway-preview-desc" class="text-xs text-slate-200">Optimal relief for 85% of sleeper positions.</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ========================================== -->
+    <!-- SECTION 2: SPECIALIZED MATTRESS CATALOG    -->
+    <!-- ========================================== -->
+    <section id="matters-catalog" class="py-16 sm:py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+      <div class="text-center max-w-3xl mx-auto space-y-4 mb-16">
+        <span class="text-xs font-bold tracking-widest text-amber-500 uppercase">Complete Lineup</span>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-sleep-950 dark:text-white">Our 4 Core Mattress Series</h2>
+        <p class="text-slate-600 dark:text-slate-300 text-base sm:text-lg">Select your model and size below for instant home delivery configuration.</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        
+        <!-- Model 1 -->
+        <div class="bg-white dark:bg-sleep-900 rounded-[2rem] overflow-hidden border border-sand-200 dark:border-sleep-800 shadow-sleep-soft hover:shadow-sleep-hover transition-all duration-300 flex flex-col justify-between p-6 space-y-6">
+          <div>
+            <div class="relative h-56 rounded-2xl overflow-hidden mb-5">
+              <img src="images/matters_hybrid_gel.jpg" alt="Somna Hybrid Gel" class="w-full h-full object-cover">
+              <span class="absolute top-3 left-3 px-3 py-1 rounded-full bg-slate-950 text-amber-300 text-[11px] font-bold">BESTSELLER</span>
+            </div>
+            <h3 class="text-xl font-extrabold text-sleep-950 dark:text-white mb-1">Somna Hybrid Gel</h3>
+            <p class="text-xs text-slate-500 dark:text-slate-400 mb-3">5-Layer Memory Foam & 1,200 Pocket Coils</p>
+            <div class="flex items-center justify-between text-xs font-bold text-amber-500 mb-4">
+              <span>Firmness: 6.5 / 10</span>
+              <span>★ 4.9 (850+)</span>
+            </div>
+            <select class="w-full p-2.5 rounded-xl bg-sand-100 dark:bg-sleep-800 border border-sand-300 dark:border-sleep-700 text-xs font-bold text-slate-800 dark:text-white focus:outline-none mb-4">
+              <option>Queen Size ($999)</option>
+              <option>King Size ($1,299)</option>
+              <option>Cal King ($1,299)</option>
+              <option>Twin XL ($799)</option>
+            </select>
+          </div>
+          <button onclick="alert('Somna Hybrid Gel Added To Shopping Bag!');" class="w-full py-3 rounded-full bg-slate-900 hover:bg-amber-400 text-white hover:text-slate-950 font-bold text-xs shadow-md transition-all">Configure & Order</button>
+        </div>
+
+        <!-- Model 2 -->
+        <div class="bg-white dark:bg-sleep-900 rounded-[2rem] overflow-hidden border border-sand-200 dark:border-sleep-800 shadow-sleep-soft hover:shadow-sleep-hover transition-all duration-300 flex flex-col justify-between p-6 space-y-6">
+          <div>
+            <div class="relative h-56 rounded-2xl overflow-hidden mb-5">
+              <img src="images/matters_natural_latex.jpg" alt="Somna Natural Latex" class="w-full h-full object-cover">
+              <span class="absolute top-3 left-3 px-3 py-1 rounded-full bg-emerald-600 text-white text-[11px] font-bold">100% ORGANIC</span>
+            </div>
+            <h3 class="text-xl font-extrabold text-sleep-950 dark:text-white mb-1">Somna Natural Latex</h3>
+            <p class="text-xs text-slate-500 dark:text-slate-400 mb-3">Botanical Dunlop Latex & Organic Wool</p>
+            <div class="flex items-center justify-between text-xs font-bold text-amber-500 mb-4">
+              <span>Firmness: 5.5 / 10</span>
+              <span>★ 4.8 (420+)</span>
+            </div>
+            <select class="w-full p-2.5 rounded-xl bg-sand-100 dark:bg-sleep-800 border border-sand-300 dark:border-sleep-700 text-xs font-bold text-slate-800 dark:text-white focus:outline-none mb-4">
+              <option>Queen Size ($1,399)</option>
+              <option>King Size ($1,699)</option>
+              <option>Cal King ($1,699)</option>
+              <option>Twin XL ($1,099)</option>
+            </select>
+          </div>
+          <button onclick="alert('Somna Natural Latex Added To Shopping Bag!');" class="w-full py-3 rounded-full bg-slate-900 hover:bg-amber-400 text-white hover:text-slate-950 font-bold text-xs shadow-md transition-all">Configure & Order</button>
+        </div>
+
+        <!-- Model 3 -->
+        <div class="bg-white dark:bg-sleep-900 rounded-[2rem] overflow-hidden border border-sand-200 dark:border-sleep-800 shadow-sleep-soft hover:shadow-sleep-hover transition-all duration-300 flex flex-col justify-between p-6 space-y-6">
+          <div>
+            <div class="relative h-56 rounded-2xl overflow-hidden mb-5">
+              <img src="images/matters_ortho_spine.svg" alt="Somna Ortho Spine" class="w-full h-full object-cover">
+              <span class="absolute top-3 left-3 px-3 py-1 rounded-full bg-purple-600 text-white text-[11px] font-bold">SPINAL RELIEF</span>
+            </div>
+            <h3 class="text-xl font-extrabold text-sleep-950 dark:text-white mb-1">Somna Ortho Spine</h3>
+            <p class="text-xs text-slate-500 dark:text-slate-400 mb-3">7-Zone Lumbar Alignment High-Density Core</p>
+            <div class="flex items-center justify-between text-xs font-bold text-amber-500 mb-4">
+              <span>Firmness: 8.0 / 10</span>
+              <span>★ 4.9 (610+)</span>
+            </div>
+            <select class="w-full p-2.5 rounded-xl bg-sand-100 dark:bg-sleep-800 border border-sand-300 dark:border-sleep-700 text-xs font-bold text-slate-800 dark:text-white focus:outline-none mb-4">
+              <option>Queen Size ($1,099)</option>
+              <option>King Size ($1,399)</option>
+              <option>Cal King ($1,399)</option>
+              <option>Twin XL ($899)</option>
+            </select>
+          </div>
+          <button onclick="alert('Somna Ortho Spine Added To Shopping Bag!');" class="w-full py-3 rounded-full bg-slate-900 hover:bg-amber-400 text-white hover:text-slate-950 font-bold text-xs shadow-md transition-all">Configure & Order</button>
+        </div>
+
+        <!-- Model 4 -->
+        <div class="bg-white dark:bg-sleep-900 rounded-[2rem] overflow-hidden border border-sand-200 dark:border-sleep-800 shadow-sleep-soft hover:shadow-sleep-hover transition-all duration-300 flex flex-col justify-between p-6 space-y-6">
+          <div>
+            <div class="relative h-56 rounded-2xl overflow-hidden mb-5">
+              <img src="images/matters_split_king.svg" alt="Somna Dual Comfort Split-King" class="w-full h-full object-cover">
+              <span class="absolute top-3 left-3 px-3 py-1 rounded-full bg-amber-500 text-slate-950 text-[11px] font-bold">COUPLES SPLIT</span>
+            </div>
+            <h3 class="text-xl font-extrabold text-sleep-950 dark:text-white mb-1">Somna Dual Split-King</h3>
+            <p class="text-xs text-slate-500 dark:text-slate-400 mb-3">Independent Left & Right Firmness Sides</p>
+            <div class="flex items-center justify-between text-xs font-bold text-amber-500 mb-4">
+              <span>Dual Firmness</span>
+              <span>★ 5.0 (310+)</span>
+            </div>
+            <select class="w-full p-2.5 rounded-xl bg-sand-100 dark:bg-sleep-800 border border-sand-300 dark:border-sleep-700 text-xs font-bold text-slate-800 dark:text-white focus:outline-none mb-4">
+              <option>Split King ($1,799)</option>
+              <option>Split Cal King ($1,899)</option>
+            </select>
+          </div>
+          <button onclick="alert('Somna Dual Split-King Added To Shopping Bag!');" class="w-full py-3 rounded-full bg-slate-900 hover:bg-amber-400 text-white hover:text-slate-950 font-bold text-xs shadow-md transition-all">Configure & Order</button>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ========================================== -->
+    <!-- SECTION 3: MATTRESS SIZE DIMENSIONS GUIDE  -->
+    <!-- ========================================== -->
+    <section id="size-guide" class="py-16 sm:py-24 px-4 sm:px-6 lg:px-8 bg-sand-100/60 dark:bg-sleep-900/40">
+      <div class="max-w-7xl mx-auto">
+        <div class="text-center max-w-3xl mx-auto space-y-4 mb-16">
+          <span class="text-xs font-bold tracking-widest text-amber-500 uppercase">Bedroom Dimension Guide</span>
+          <h2 class="text-3xl sm:text-4xl font-extrabold text-sleep-950 dark:text-white">Find Your Perfect Mattress Size</h2>
+          <p class="text-slate-600 dark:text-slate-300 text-base">Check dimensions and recommended minimum bedroom dimensions before ordering.</p>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          
+          <!-- Size Card 1 -->
+          <div class="bg-white dark:bg-sleep-900 p-6 rounded-[2rem] border border-sand-200 dark:border-sleep-800 shadow-sm space-y-3">
+            <span class="px-3 py-1 rounded-full bg-sand-100 dark:bg-sleep-800 text-xs font-bold text-amber-500">TWIN XL</span>
+            <h3 class="text-xl font-extrabold text-sleep-950 dark:text-white">38" x 80"</h3>
+            <p class="text-xs text-slate-500 dark:text-slate-400">Great for dorms, guest rooms, or tall solo sleepers.</p>
+            <p class="text-[11px] font-bold text-slate-400 pt-2 border-t border-sand-200 dark:border-sleep-800">Min Room Size: 7' x 10'</p>
+          </div>
+
+          <!-- Size Card 2 -->
+          <div class="bg-white dark:bg-sleep-900 p-6 rounded-[2rem] border border-sand-200 dark:border-sleep-800 shadow-sm space-y-3">
+            <span class="px-3 py-1 rounded-full bg-amber-400/20 text-amber-600 dark:text-amber-300 text-xs font-bold">QUEEN (MOST POPULAR)</span>
+            <h3 class="text-xl font-extrabold text-sleep-950 dark:text-white">60" x 80"</h3>
+            <p class="text-xs text-slate-500 dark:text-slate-400">Ideal for couples and master bedrooms.</p>
+            <p class="text-[11px] font-bold text-slate-400 pt-2 border-t border-sand-200 dark:border-sleep-800">Min Room Size: 10' x 10'</p>
+          </div>
+
+          <!-- Size Card 3 -->
+          <div class="bg-white dark:bg-sleep-900 p-6 rounded-[2rem] border border-sand-200 dark:border-sleep-800 shadow-sm space-y-3">
+            <span class="px-3 py-1 rounded-full bg-sand-100 dark:bg-sleep-800 text-xs font-bold text-amber-500">KING</span>
+            <h3 class="text-xl font-extrabold text-sleep-950 dark:text-white">76" x 80"</h3>
+            <p class="text-xs text-slate-500 dark:text-slate-400">Maximum personal space for couples & pets.</p>
+            <p class="text-[11px] font-bold text-slate-400 pt-2 border-t border-sand-200 dark:border-sleep-800">Min Room Size: 12' x 10'</p>
+          </div>
+
+          <!-- Size Card 4 -->
+          <div class="bg-white dark:bg-sleep-900 p-6 rounded-[2rem] border border-sand-200 dark:border-sleep-800 shadow-sm space-y-3">
+            <span class="px-3 py-1 rounded-full bg-sand-100 dark:bg-sleep-800 text-xs font-bold text-amber-500">CALIFORNIA KING</span>
+            <h3 class="text-xl font-extrabold text-sleep-950 dark:text-white">72" x 84"</h3>
+            <p class="text-xs text-slate-500 dark:text-slate-400">Extra length for tall sleepers over 6'2".</p>
+            <p class="text-[11px] font-bold text-slate-400 pt-2 border-t border-sand-200 dark:border-sleep-800">Min Room Size: 12' x 12'</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================== -->
+    <!-- SECTION 4: SPINE ALIGNMENT & SLEEP SCIENCE -->
+    <!-- ========================================== -->
+    <section id="spine-health" class="py-16 sm:py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        
+        <div class="lg:col-span-6 space-y-6">
+          <span class="text-xs font-bold tracking-widest text-amber-500 uppercase">Spinal Medical Science</span>
+          <h2 class="text-3xl sm:text-4xl font-extrabold text-sleep-950 dark:text-white">7-Zone Ergonomic Pressure Point Relief</h2>
+          <p class="text-slate-600 dark:text-slate-300 text-base leading-relaxed">Standard mattresses cause severe sagging in the lumbar region. Somna's 7-zone coil mapping keeps your spine in natural neutral alignment.</p>
+
+          <div class="space-y-4">
+            <div class="p-4 rounded-2xl bg-white dark:bg-sleep-900 border border-sand-200 dark:border-sleep-800 flex gap-4 items-center">
+              <span class="w-10 h-10 rounded-xl bg-amber-400 text-slate-950 font-bold flex items-center justify-center">1</span>
+              <div>
+                <h4 class="font-bold text-sleep-950 dark:text-white text-base">Head & Shoulder Zone</h4>
+                <p class="text-xs text-slate-500 dark:text-slate-400">Soft coil tension absorbs shoulder pressure when sleeping on your side.</p>
+              </div>
+            </div>
+
+            <div class="p-4 rounded-2xl bg-white dark:bg-sleep-900 border border-sand-200 dark:border-sleep-800 flex gap-4 items-center">
+              <span class="w-10 h-10 rounded-xl bg-amber-400 text-slate-950 font-bold flex items-center justify-center">2</span>
+              <div>
+                <h4 class="font-bold text-sleep-950 dark:text-white text-base">Reinforced Lumbar Core</h4>
+                <p class="text-xs text-slate-500 dark:text-slate-400">Firmer gauge steel coils prevent lower back sinkage.</p>
+              </div>
+            </div>
+
+            <div class="p-4 rounded-2xl bg-white dark:bg-sleep-900 border border-sand-200 dark:border-sleep-800 flex gap-4 items-center">
+              <span class="w-10 h-10 rounded-xl bg-amber-400 text-slate-950 font-bold flex items-center justify-center">3</span>
+              <div>
+                <h4 class="font-bold text-sleep-950 dark:text-white text-base">Hip Cushioning Zone</h4>
+                <p class="text-xs text-slate-500 dark:text-slate-400">Adaptive contouring cradles pelvic bones without joint strain.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="lg:col-span-6">
+          <img src="images/matters_spine_health.svg" alt="Spine Health Contour Diagram" class="rounded-[2.5rem] shadow-xl border border-sand-300 dark:border-sleep-800 w-full h-96 object-cover">
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ========================================== -->
+    <!-- SECTION 5: WHITE-GLOVE UNBOXING SERVICE   -->
+    <!-- ========================================== -->
+    <section id="white-glove" class="py-16 sm:py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+      <div class="bg-sleep-900 rounded-[2.5rem] text-white p-8 sm:p-12 lg:p-16 relative overflow-hidden shadow-2xl">
+        <div class="max-w-2xl relative z-10 space-y-6">
+          <span class="px-3.5 py-1.5 rounded-full bg-amber-400 text-slate-950 font-extrabold text-xs uppercase tracking-wider">Hassle-Free Service</span>
+          <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold leading-tight">White-Glove Home Setup & Old Mattress Removal</h2>
+          <p class="text-slate-300 text-base sm:text-lg leading-relaxed">Don't lift a finger. Our two-person delivery team will unbox your new Somna mattress, assemble your frame, and responsibly recycle your old mattress.</p>
+          
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 pt-4">
+            <div class="space-y-2">
+              <div class="w-10 h-10 rounded-full bg-slate-800 text-amber-300 flex items-center justify-center font-bold">1</div>
+              <h4 class="font-bold text-white text-base">Scheduled Window</h4>
+              <p class="text-xs text-slate-400">Choose a 2-hour delivery window that fits your weekend schedule.</p>
+            </div>
+            <div class="space-y-2">
+              <div class="w-10 h-10 rounded-full bg-slate-800 text-amber-300 flex items-center justify-center font-bold">2</div>
+              <h4 class="font-bold text-white text-base">In-Bedroom Setup</h4>
+              <p class="text-xs text-slate-400">Unboxed, decompressed, and fitted onto your bed frame.</p>
+            </div>
+            <div class="space-y-2">
+              <div class="w-10 h-10 rounded-full bg-slate-800 text-amber-300 flex items-center justify-center font-bold">3</div>
+              <h4 class="font-bold text-white text-base">Eco Recycling</h4>
+              <p class="text-xs text-slate-400">Your old mattress is hauled away and 100% recycled.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================== -->
+    <!-- SECTION 6: MATTRESS FAQ ACCORDION         -->
+    <!-- ========================================== -->
+    <section id="matters-faq" class="py-16 sm:py-24 px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto">
+      <div class="text-center space-y-4 mb-16">
+        <span class="text-xs font-bold tracking-widest text-amber-500 uppercase">Frequently Asked Questions</span>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-sleep-950 dark:text-white">Mattress Care & Purchase FAQ</h2>
+      </div>
+
+      <div class="space-y-4">
+        
+        <!-- Question 1 -->
+        <div class="bg-white dark:bg-sleep-900 rounded-2xl border border-sand-200 dark:border-sleep-800 overflow-hidden shadow-sm">
+          <button onclick="toggleFaq(1)" class="w-full p-6 text-left font-bold text-lg text-sleep-950 dark:text-white flex items-center justify-between">
+            <span>How long is the mattress break-in period?</span>
+            <span id="faq-icon-1" class="text-amber-500 font-extrabold text-xl">+</span>
+          </button>
+          <div id="faq-answer-1" class="px-6 pb-6 text-sm text-slate-600 dark:text-slate-300 hidden">
+            It takes up to 30 nights for your body to adjust to a new orthopedic support system, and for the memory foam layers to reach their full contouring responsiveness.
+          </div>
+        </div>
+
+        <!-- Question 2 -->
+        <div class="bg-white dark:bg-sleep-900 rounded-2xl border border-sand-200 dark:border-sleep-800 overflow-hidden shadow-sm">
+          <button onclick="toggleFaq(2)" class="w-full p-6 text-left font-bold text-lg text-sleep-950 dark:text-white flex items-center justify-between">
+            <span>Do I need to flip my Somna mattress?</span>
+            <span id="faq-icon-2" class="text-amber-500 font-extrabold text-xl">+</span>
+          </button>
+          <div id="faq-answer-2" class="px-6 pb-6 text-sm text-slate-600 dark:text-slate-300 hidden">
+            No flipping required! Somna mattresses are engineered with a dedicated high-density base layer at the bottom and plush contouring layers on top. We recommend rotating head-to-toe once every 6 months.
+          </div>
+        </div>
+
+        <!-- Question 3 -->
+        <div class="bg-white dark:bg-sleep-900 rounded-2xl border border-sand-200 dark:border-sleep-800 overflow-hidden shadow-sm">
+          <button onclick="toggleFaq(3)" class="w-full p-6 text-left font-bold text-lg text-sleep-950 dark:text-white flex items-center justify-between">
+            <span>Are Somna mattresses compatible with adjustable bases?</span>
+            <span id="faq-icon-3" class="text-amber-500 font-extrabold text-xl">+</span>
+          </button>
+          <div id="faq-answer-3" class="px-6 pb-6 text-sm text-slate-600 dark:text-slate-300 hidden">
+            Yes! All Somna hybrid and latex mattresses flex seamlessly on all standard adjustable bed bases, platform beds, slatted frames, and box springs.
+          </div>
+        </div>
+
+        <!-- Question 4 -->
+        <div class="bg-white dark:bg-sleep-900 rounded-2xl border border-sand-200 dark:border-sleep-800 overflow-hidden shadow-sm">
+          <button onclick="toggleFaq(4)" class="w-full p-6 text-left font-bold text-lg text-sleep-950 dark:text-white flex items-center justify-between">
+            <span>How does the 10-Year Warranty work?</span>
+            <span id="faq-icon-4" class="text-amber-500 font-extrabold text-xl">+</span>
+          </button>
+          <div id="faq-answer-4" class="px-6 pb-6 text-sm text-slate-600 dark:text-slate-300 hidden">
+            Our 10-year warranty covers structural defects, sagging greater than 0.75 inches, and coil degradation with a 100% full replacement policy at zero cost to you.
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ========================================== -->
+    <!-- SECTION 7: FREE SAMPLE SWATCH ORDER FORM  -->
+    <!-- ========================================== -->
+    <section id="sample-swatch" class="py-16 sm:py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        
+        <div class="lg:col-span-6 space-y-6">
+          <span class="text-xs font-bold tracking-widest text-amber-500 uppercase">Touch Before You Buy</span>
+          <h2 class="text-3xl sm:text-4xl font-extrabold text-sleep-950 dark:text-white">Order A Free Home Fabric Swatch Box</h2>
+          <p class="text-slate-600 dark:text-slate-300 text-base leading-relaxed">We will ship a complimentary sample box containing organic cotton cover swatches, cooling gel memory foam samples, and Dunlop latex swatches directly to your door.</p>
+
+          <form onsubmit="event.preventDefault(); alert('Free Swatch Box Requested! Shipping within 24 hours.');" class="p-8 rounded-[2rem] bg-white dark:bg-sleep-900 border border-sand-300 dark:border-sleep-800 space-y-4 shadow-xl">
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <input type="text" placeholder="Full Name" required class="w-full px-4 py-3.5 rounded-xl bg-sand-50 dark:bg-sleep-800 border border-sand-300 dark:border-sleep-700 text-sm focus:outline-none dark:text-white font-medium">
+              <input type="email" placeholder="Email Address" required class="w-full px-4 py-3.5 rounded-xl bg-sand-50 dark:bg-sleep-800 border border-sand-300 dark:border-sleep-700 text-sm focus:outline-none dark:text-white font-medium">
+            </div>
+            <input type="text" placeholder="Shipping Address & Zipcode" required class="w-full px-4 py-3.5 rounded-xl bg-sand-50 dark:bg-sleep-800 border border-sand-300 dark:border-sleep-700 text-sm focus:outline-none dark:text-white font-medium">
+            <button type="submit" class="w-full py-4 rounded-full bg-amber-400 hover:bg-amber-300 text-slate-950 font-extrabold text-sm transition-all shadow-md hover:shadow-lg">Ship Free Swatch Box</button>
+          </form>
+        </div>
+
+        <div class="lg:col-span-6">
+          <img src="images/matters_swatch_box.svg" alt="Free Swatch Box Preview" class="rounded-[2.5rem] shadow-xl border border-sand-300 dark:border-sleep-800 w-full h-96 object-cover">
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- LOGIN MODAL -->
+  <div id="login-modal" class="fixed inset-0 bg-slate-950/70 backdrop-blur-md z-50 flex items-center justify-center p-4 opacity-0 pointer-events-none transition-opacity duration-300">
+    <div class="bg-white dark:bg-sleep-900 rounded-3xl p-8 max-w-md w-full shadow-2xl border border-sand-200 dark:border-sleep-800 space-y-6 transform scale-95 transition-transform duration-300 relative">
+      <button onclick="closeLoginModal()" class="absolute top-6 right-6 text-slate-400 hover:text-slate-600 dark:hover:text-white">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+      </button>
+
+      <div class="space-y-2">
+        <h3 class="text-2xl font-extrabold text-sleep-950 dark:text-white">Sign In To Somna</h3>
+        <p class="text-xs text-slate-500 dark:text-slate-400">Access your mattress order dashboard.</p>
+      </div>
+
+      <form onsubmit="event.preventDefault(); alert('Signed In Successfully!'); closeLoginModal();" class="space-y-4">
+        <div>
+          <label class="block text-xs font-bold text-slate-700 dark:text-slate-300 mb-1">Email Address</label>
+          <input type="email" required placeholder="you@example.com" class="w-full px-4 py-3 rounded-xl bg-sand-50 dark:bg-sleep-800 border border-sand-300 dark:border-sleep-700 text-sm focus:outline-none text-sleep-900 dark:text-white">
+        </div>
+        <div>
+          <label class="block text-xs font-bold text-slate-700 dark:text-slate-300 mb-1">Password</label>
+          <input type="password" required placeholder="••••••••" class="w-full px-4 py-3 rounded-xl bg-sand-50 dark:bg-sleep-800 border border-sand-300 dark:border-sleep-700 text-sm focus:outline-none text-sleep-900 dark:text-white">
+        </div>
+        <button type="submit" class="w-full py-3.5 rounded-full bg-amber-400 hover:bg-amber-300 text-slate-950 font-bold text-sm transition-colors shadow-md">Sign In</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- ========================================== -->
+  <!-- COMPREHENSIVE FOOTER                      -->
+  <!-- ========================================== -->
+  <footer class="bg-sleep-950 text-slate-300 pt-16 pb-12 border-t border-sleep-800/80">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
+
+      <!-- Main Footer Columns -->
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-12">
+        
+        <!-- Left Brand & Social Icons -->
+        <div class="md:col-span-4 space-y-6">
+          <a href="index.html" class="flex items-center space-x-3 rtl:space-x-reverse">
+            <div class="w-10 h-10 rounded-xl bg-sleep-900 flex items-center justify-center text-amber-300 border border-sleep-800">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21.752 15.002A9.718 9.718 0 0118 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 003 11.25C3 16.635 7.365 21 12.75 21a9.003 9.003 0 008.354-5.646z"/></svg>
+            </div>
+            <span class="text-xl font-extrabold text-white">SOMNA SLEEP</span>
+          </a>
+          <p class="text-sm text-slate-400 max-w-sm">Crafting luxurious, orthopedic mattress solutions engineered for restorative night's rest.</p>
+          <div class="flex items-center space-x-3 rtl:space-x-reverse">
+            <a href="#" class="w-9 h-9 rounded-full bg-sleep-900 flex items-center justify-center hover:bg-amber-400 hover:text-slate-950 transition-colors">
+              <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+            </a>
+            <a href="#" class="w-9 h-9 rounded-full bg-sleep-900 flex items-center justify-center hover:bg-amber-400 hover:text-slate-950 transition-colors">
+              <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+            </a>
+            <a href="#" class="w-9 h-9 rounded-full bg-sleep-900 flex items-center justify-center hover:bg-amber-400 hover:text-slate-950 transition-colors">
+              <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Center Quick Links -->
+        <div class="md:col-span-4 grid grid-cols-1 sm:grid-cols-2 gap-6">
+          <div class="space-y-4">
+            <h4 class="text-sm font-bold text-white uppercase tracking-wider">Mattress Line</h4>
+            <ul class="space-y-2 text-sm text-slate-400">
+              <li><a href="#matters-catalog" class="hover:text-amber-300 transition-colors">Somna Hybrid Gel</a></li>
+              <li><a href="#matters-catalog" class="hover:text-amber-300 transition-colors">Somna Natural Latex</a></li>
+              <li><a href="#matters-catalog" class="hover:text-amber-300 transition-colors">Somna Ortho Spine</a></li>
+              <li><a href="#matters-catalog" class="hover:text-amber-300 transition-colors">Dual Split-King</a></li>
+            </ul>
+          </div>
+
+          <div class="space-y-4">
+            <h4 class="text-sm font-bold text-white uppercase tracking-wider">Mattress Help</h4>
+            <ul class="space-y-2 text-sm text-slate-400">
+              <li><a href="#size-guide" class="hover:text-amber-300 transition-colors">Size Dimensions</a></li>
+              <li><a href="#spine-health" class="hover:text-amber-300 transition-colors">Spine Health</a></li>
+              <li><a href="#white-glove" class="hover:text-amber-300 transition-colors">White-Glove Setup</a></li>
+              <li><a href="#matters-faq" class="hover:text-amber-300 transition-colors">Mattress FAQ</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Right Newsletter Subscription Pill -->
+        <div class="md:col-span-4 space-y-4">
+          <h4 class="text-sm font-bold text-white uppercase tracking-wider">Subscribe to Restful Updates</h4>
+          <p class="text-xs text-slate-400">Get $100 off your first mattress order plus exclusive sleep tips.</p>
+          <form onsubmit="event.preventDefault(); alert('Subscribed to Restful Updates!');" class="p-1.5 rounded-full bg-slate-900 border border-slate-700/80 flex items-center gap-2 w-full max-w-md">
+            <input type="email" placeholder="Enter your email" required class="w-full min-w-0 px-4 py-2 bg-transparent text-xs sm:text-sm text-white placeholder-slate-400 focus:outline-none">
+            <button type="submit" class="flex-shrink-0 whitespace-nowrap px-5 py-2 rounded-full bg-amber-400 hover:bg-amber-300 text-slate-950 font-bold text-xs transition-all shadow-md">Subscribe</button>
+          </form>
+        </div>
+
+      </div>
+
+      <div class="pt-8 border-t border-sleep-800 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500">
+        <p>&copy; 2026 SOMNA SLEEP INC. ALL RIGHTS RESERVED.</p>
+        <div class="flex items-center space-x-6 rtl:space-x-reverse">
+          <a href="#" class="hover:underline">Privacy Policy</a>
+          <a href="#" class="hover:underline">Terms of Service</a>
+          <a href="#" class="hover:underline">Cookie Preferences</a>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- ========================================== -->
+  <!-- JAVASCRIPT CONTROLLER                      -->
+  <!-- ========================================== -->
+  <script>
+    let currentTheme = localStorage.getItem('theme') || 'light';
+    let currentDir = localStorage.getItem('dir') || 'ltr';
+    let activeNavKey = 'mattresses';
+
+    document.addEventListener('DOMContentLoaded', () => {
+      initTheme();
+      initDir();
+      setActiveNav(activeNavKey);
+    });
+
+    function initTheme() {
+      if (currentTheme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+        document.documentElement.classList.add('dark');
+        currentTheme = 'dark';
+      } else {
+        document.documentElement.classList.remove('dark');
+        currentTheme = 'light';
+      }
+    }
+
+    function toggleDarkMode() {
+      if (document.documentElement.classList.contains('dark')) {
+        document.documentElement.classList.remove('dark');
+        localStorage.setItem('theme', 'light');
+        currentTheme = 'light';
+      } else {
+        document.documentElement.classList.add('dark');
+        localStorage.setItem('theme', 'dark');
+        currentTheme = 'dark';
+      }
+    }
+
+    function initDir() {
+      document.documentElement.setAttribute('dir', currentDir);
+      const l1 = document.getElementById('rtl-status-label');
+      const l2 = document.getElementById('mobile-rtl-status-label');
+      if (l1) l1.innerText = currentDir.toUpperCase();
+      if (l2) l2.innerText = currentDir.toUpperCase();
+    }
+
+    function toggleRTL() {
+      currentDir = currentDir === 'ltr' ? 'rtl' : 'ltr';
+      document.documentElement.setAttribute('dir', currentDir);
+      localStorage.setItem('dir', currentDir);
+      const l1 = document.getElementById('rtl-status-label');
+      const l2 = document.getElementById('mobile-rtl-status-label');
+      if (l1) l1.innerText = currentDir.toUpperCase();
+      if (l2) l2.innerText = currentDir.toUpperCase();
+    }
+
+    function setActiveNav(navKey) {
+      activeNavKey = navKey;
+      const navKeys = ['home', 'mattresses', 'size-guide', 'room-clearance', 'delivery-clearance', 'box-specs', 'contact'];
+      
+      navKeys.forEach(key => {
+        const btn = document.getElementById('nav-btn-' + key);
+        if (btn) {
+          if (key === navKey) {
+            btn.className = 'main-nav-btn inline-flex items-center gap-1 px-3 py-1.5 rounded-full text-amber-400 font-bold text-xs transition-all duration-200 focus:outline-none';
+          } else {
+            btn.className = 'main-nav-btn inline-flex items-center gap-1 px-3 py-1.5 rounded-full text-slate-300 hover:text-amber-400 hover:bg-slate-800/80 font-medium text-xs transition-all duration-200';
+          }
+        }
+        const mBtn = document.getElementById('mobile-nav-btn-' + key);
+        if (mBtn) {
+          if (key === navKey) {
+            mBtn.className = 'flex items-center gap-3 px-4 py-3 text-amber-500 font-bold text-base rounded-xl bg-sand-100 dark:bg-sleep-800';
+          } else {
+            mBtn.className = 'flex items-center gap-3 px-4 py-3 text-slate-800 dark:text-slate-200 font-semibold text-base rounded-xl hover:bg-sand-100 dark:hover:bg-sleep-800/60';
+          }
+        }
+      });
+    }
+
+    function setActiveHome(homeChoice) {
+      if (homeChoice === 'home1') {
+        window.location.href = 'index.html';
+      } else if (homeChoice === 'home2') {
+        window.location.href = 'home2.html';
+      }
+    }
+
+    function toggleMobileMenu(open) {
+      const drawer = document.getElementById('mobile-drawer');
+      const backdrop = document.getElementById('mobile-menu-backdrop');
+      
+      if (open) {
+        if (drawer) drawer.classList.add('open');
+        if (backdrop) {
+          backdrop.classList.remove('opacity-0', 'pointer-events-none');
+          backdrop.classList.add('opacity-100');
+        }
+        document.body.style.overflow = 'hidden';
+      } else {
+        if (drawer) drawer.classList.remove('open');
+        if (backdrop) {
+          backdrop.classList.remove('opacity-100');
+          backdrop.classList.add('opacity-0', 'pointer-events-none');
+        }
+        document.body.style.overflow = '';
+      }
+    }
+
+    function toggleMobileHomeSubmenu() {
+      const submenu = document.getElementById('mobile-home-submenu');
+      const chevron = document.getElementById('mobile-home-chevron');
+      if (submenu) {
+        const isHidden = submenu.classList.contains('hidden') || submenu.style.display === 'none' || getComputedStyle(submenu).display === 'none';
+        if (isHidden) {
+          submenu.style.display = 'block';
+          submenu.classList.remove('hidden');
+          if (chevron) chevron.classList.add('rotate-180');
+        } else {
+          submenu.style.display = 'none';
+          submenu.classList.add('hidden');
+          if (chevron) chevron.classList.remove('rotate-180');
+        }
+      }
+    }
+
+    function openLoginModal() {
+      const modal = document.getElementById('login-modal');
+      if (modal) {
+        modal.classList.remove('opacity-0', 'pointer-events-none');
+        modal.classList.add('opacity-100');
+        if (modal.firstElementChild) {
+          modal.firstElementChild.classList.remove('scale-95');
+          modal.firstElementChild.classList.add('scale-100');
+        }
+        document.body.style.overflow = 'hidden';
+      }
+    }
+
+    function closeLoginModal() {
+      const modal = document.getElementById('login-modal');
+      if (modal) {
+        modal.classList.remove('opacity-100');
+        modal.classList.add('opacity-0', 'pointer-events-none');
+        if (modal.firstElementChild) {
+          modal.firstElementChild.classList.remove('scale-100');
+          modal.firstElementChild.classList.add('scale-95');
+        }
+        document.body.style.overflow = '';
+      }
+    }
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        toggleMobileMenu(false);
+        closeLoginModal();
+      }
+    });
+    function switchCutawayLayer(name, desc, imgFile) {
+      const title = document.getElementById('cutaway-preview-title');
+      const descElem = document.getElementById('cutaway-preview-desc');
+      const img = document.getElementById('cutaway-preview-img');
+      if (title) title.innerText = name;
+      if (descElem) descElem.innerText = desc;
+      if (img) img.src = imgFile;
+    }
+
+    function updateFirmnessPreview(val) {
+      const label = document.getElementById('firmness-level-label');
+      const title = document.getElementById('cutaway-preview-title');
+      const desc = document.getElementById('cutaway-preview-desc');
+      const img = document.getElementById('cutaway-preview-img');
+      
+      if (val == 1) {
+        if (label) label.innerText = 'Soft Plush (4/10)';
+        if (title) title.innerText = 'Soft Plush Hybrid';
+        if (desc) desc.innerText = 'Deep pressure relief tailored for side sleepers.';
+        if (img) img.src = 'images/mattress_hybrid.jpg';
+      } else if (val == 2) {
+        if (label) label.innerText = 'Medium Balanced (6.5/10)';
+        if (title) title.innerText = 'Medium-Balanced Hybrid';
+        if (desc) desc.innerText = 'Optimal relief for 85% of sleeper positions.';
+        if (img) img.src = 'images/matters_cutaway.jpg';
+      } else if (val == 3) {
+        if (label) label.innerText = 'Extra Firm (9/10)';
+        if (title) title.innerText = 'Orthopedic Firm Hybrid';
+        if (desc) desc.innerText = 'Maximum spinal alignment and firm support.';
+        if (img) img.src = 'images/mattress_ortho.jpg';
+      }
+    }
+
+    function toggleFaq(num) {
+      const answer = document.getElementById('faq-answer-' + num);
+      const icon = document.getElementById('faq-icon-' + num);
+      if (answer && icon) {
+        if (answer.classList.contains('hidden')) {
+          answer.classList.remove('hidden');
+          icon.innerText = '−';
+        } else {
+          answer.classList.add('hidden');
+          icon.innerText = '+';
+        }
+      }
+    }
+  </script>
+</body>
+</html>

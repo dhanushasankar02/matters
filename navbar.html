@@ -1,0 +1,717 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Somna Bedding & Sleep Store - One-Line Navbar & Footer</title>
+  
+  <!-- Google Fonts: Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+          },
+          colors: {
+            sleep: {
+              50: '#F7F9FC',
+              100: '#EFF3F9',
+              200: '#DBE3F0',
+              300: '#B9C9E1',
+              400: '#8FA8CF',
+              500: '#6485BA',
+              600: '#47679E',
+              700: '#38517F',
+              800: '#2A3C5F',
+              900: '#1B2741',
+              950: '#0B101D',
+            },
+            sand: {
+              50: '#FAF8F5',
+              100: '#F4F0E8',
+              200: '#E7DEC9',
+              300: '#D8C9A8',
+              500: '#BAA276',
+              800: '#6E5D3F',
+            }
+          },
+          boxShadow: {
+            'sleep-soft': '0 10px 30px -5px rgba(27, 39, 65, 0.05), 0 4px 12px -2px rgba(27, 39, 65, 0.03)',
+            'sleep-hover': '0 20px 35px -5px rgba(27, 39, 65, 0.1), 0 8px 20px -4px rgba(27, 39, 65, 0.06)',
+            'sleep-dark': '0 10px 30px -5px rgba(0, 0, 0, 0.4), 0 4px 12px -2px rgba(0, 0, 0, 0.25)',
+          }
+        }
+      }
+    };
+  </script>
+  
+  <style type="text/tailwindcss">
+    @layer base {
+      body {
+        @apply font-sans bg-sand-50 text-slate-800 dark:bg-sleep-950 dark:text-slate-100 transition-colors duration-300 antialiased selection:bg-sleep-200 selection:text-sleep-900 dark:selection:bg-sleep-800 dark:selection:text-sleep-100;
+      }
+    }
+    
+    /* Smooth CSS Animations & Custom Logic */
+    .dropdown-menu {
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(8px) scale(0.98);
+      transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    
+    .dropdown-group:hover .dropdown-menu,
+    .dropdown-menu.active {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0) scale(1);
+    }
+    
+    /* RTL aware transforms */
+    [dir="rtl"] .rtl-mirror {
+      transform: scaleX(-1);
+    }
+
+    [dir="rtl"] .dropdown-menu {
+      right: 0;
+      left: auto;
+      transform-origin: top right;
+    }
+
+    [dir="ltr"] .dropdown-menu {
+      left: 0;
+      right: auto;
+      transform-origin: top left;
+    }
+
+    /* Mobile Drawer slide direction based on RTL */
+    [dir="ltr"] #mobile-drawer {
+      right: 0;
+      left: auto;
+      transform: translateX(100%);
+    }
+    [dir="ltr"] #mobile-drawer.open {
+      transform: translateX(0);
+    }
+
+    [dir="rtl"] #mobile-drawer {
+      left: 0;
+      right: auto;
+      transform: translateX(-100%);
+    }
+    [dir="rtl"] #mobile-drawer.open {
+      transform: translateX(0);
+    }
+
+    /* Custom Glassmorphism One-Line Navbar */
+    .nav-glass {
+      background-color: rgba(250, 248, 245, 0.92);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+    }
+    .dark .nav-glass {
+      background-color: rgba(11, 16, 29, 0.92);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+    }
+
+    /* Pulse Glow for badges */
+    @keyframes pulse-subtle {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.85; transform: scale(1.03); }
+    }
+    .animate-pulse-subtle {
+      animation: pulse-subtle 3s ease-in-out infinite;
+    }
+  </style>
+</head>
+<body class="min-h-screen flex flex-col justify-between overflow-x-hidden">
+
+  <!-- ========================================== -->
+  <!-- SINGLE ONE-LINE NAVBAR HEADER              -->
+  <!-- ========================================== -->
+  <!-- 1. HEADER (DEEP MIDNIGHT SLEEP NAVY)      -->
+  <!-- ========================================== -->
+  <header class="sticky top-0 z-40 w-full bg-[#0F172A] border-b border-slate-800/80 shadow-md text-white transition-colors duration-300">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-20 gap-4 flex-nowrap">
+        
+        <!-- 1. LEFT: BRAND LOGO -->
+        <a href="#home1" id="brand-logo-link" class="flex-shrink-0 flex items-center space-x-3 rtl:space-x-reverse focus:outline-none focus:ring-2 focus:ring-amber-400 rounded-xl p-1 group">
+          <div class="w-10 h-10 rounded-xl bg-slate-800 flex items-center justify-center text-amber-300 shadow-md group-hover:scale-105 transition-transform border border-slate-700">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21.752 15.002A9.718 9.718 0 0118 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 003 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 009.002-5.998z"/>
+            </svg>
+          </div>
+          <span class="text-xl font-extrabold text-white tracking-tight">SOMNA SLEEP</span>
+        </a>
+
+        <!-- 2. RIGHT SIDE: NAVIGATION LINKS & CONTROLS GROUP -->
+        <div class="flex items-center space-x-4 lg:space-x-6 rtl:space-x-reverse flex-nowrap">
+          
+          <!-- DESKTOP NAVIGATION LINKS (RIGHT SIDE ALIGNED) -->
+          <nav class="hidden lg:flex items-center space-x-1 xl:space-x-2 rtl:space-x-reverse font-medium text-sm whitespace-nowrap">
+            
+            <!-- HOME DROPDOWN MENU -->
+            <div class="relative dropdown-group py-5">
+              <button id="nav-btn-home" 
+                      type="button" 
+                      onclick="setActiveNav('home')"
+                      aria-expanded="false" 
+                      aria-haspopup="true"
+                      class="main-nav-btn inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-amber-500 dark:text-amber-400 font-bold text-base transition-all duration-200 focus:outline-none">
+                <span id="current-home-label">Home</span>
+                <!-- Chevron Down Arrow v on Right Side -->
+                <svg id="home-arrow-icon" class="w-3.5 h-3.5 text-slate-400 dark:text-slate-200 group-hover:text-amber-500 dark:group-hover:text-amber-400 transition-transform duration-200 group-hover:rotate-180 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"/>
+                </svg>
+              </button>
+
+              <!-- Dropdown Container -->
+              <div id="home-dropdown-menu" 
+                   class="dropdown-menu absolute top-full w-44 p-1.5 bg-slate-900 border border-slate-700/80 rounded-2xl shadow-2xl z-50">
+
+                <!-- Option 1: Home 1 -->
+                <a href="#home1" 
+                   id="option-home1"
+                   onclick="setActiveHome('home1')"
+                   class="home-option-link flex items-center justify-between px-3.5 py-2.5 rounded-xl bg-slate-800 text-amber-400 font-bold text-sm transition-all duration-200">
+                  <span>Home 1</span>
+                  <span id="badge-home1" class="w-2 h-2 rounded-full bg-amber-400 ring-4 ring-amber-400/20"></span>
+                </a>
+
+                <!-- Option 2: Home 2 -->
+                <a href="#home2" 
+                   id="option-home2"
+                   onclick="setActiveHome('home2')"
+                   class="home-option-link flex items-center justify-between px-3.5 py-2.5 rounded-xl hover:bg-slate-800/80 text-slate-200 hover:text-amber-300 font-semibold text-sm transition-all duration-200">
+                  <span>Home 2</span>
+                  <span id="badge-home2" class="w-2 h-2 rounded-full bg-transparent"></span>
+                </a>
+
+              </div>
+            </div>
+
+            <!-- NAV ITEMS -->
+            <a href="#mattresses" id="nav-btn-mattresses" onclick="setActiveNav('mattresses')" class="main-nav-btn px-3.5 py-2 rounded-full text-slate-300 hover:text-amber-400 hover:bg-slate-800/80 font-medium transition-all duration-200">
+              Mattresses
+            </a>
+
+            <a href="#pillows" id="nav-btn-pillows" onclick="setActiveNav('pillows')" class="main-nav-btn px-3.5 py-2 rounded-full text-slate-300 hover:text-amber-400 hover:bg-slate-800/80 font-medium transition-all duration-200">
+              Pillows & Bedding
+            </a>
+
+            <a href="#trial" id="nav-btn-trial" onclick="setActiveNav('trial')" class="main-nav-btn px-3.5 py-2 rounded-full text-slate-300 hover:text-amber-400 hover:bg-slate-800/80 font-medium transition-all duration-200">
+              Trial & Returns
+            </a>
+
+            <a href="#delivery" id="nav-btn-delivery" onclick="setActiveNav('delivery')" class="main-nav-btn px-3.5 py-2 rounded-full text-slate-300 hover:text-amber-400 hover:bg-slate-800/80 font-medium transition-all duration-200">
+              Home Delivery
+            </a>
+
+            <a href="#contact" id="nav-btn-contact" onclick="setActiveNav('contact')" class="main-nav-btn px-3.5 py-2 rounded-full text-slate-300 hover:text-amber-400 hover:bg-slate-800/80 font-medium transition-all duration-200">
+              Contact
+            </a>
+
+          </nav>
+
+          <!-- RIGHT-SIDE CONTROLS (DARK MODE, RTL, LOGIN, MOBILE HAMBURGER) -->
+          <div class="flex-shrink-0 flex items-center space-x-2 sm:space-x-3 rtl:space-x-reverse whitespace-nowrap">
+
+            <!-- DARK MODE TOGGLE BUTTON -->
+            <button id="theme-toggle-btn" 
+                    type="button" 
+                    onclick="toggleDarkMode()" 
+                    aria-label="Toggle Dark Mode"
+                    title="Toggle Light / Dark Mode"
+                    class="p-2.5 rounded-full text-slate-300 hover:bg-slate-800 focus:outline-none focus:ring-2 focus:ring-amber-400 transition-all duration-200 hover:scale-105 active:scale-95">
+              <svg id="theme-toggle-dark-icon" class="w-5 h-5 block dark:hidden text-amber-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21.752 15.002A9.718 9.718 0 0118 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 003 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 009.002-5.998z"/>
+              </svg>
+              <svg id="theme-toggle-light-icon" class="w-5 h-5 hidden dark:block text-amber-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v2.25m6.364.386l-1.591 1.591M21 12h-2.25m-.386 6.364l-1.591-1.591M12 18.75V21m-4.773-4.227l-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0z"/>
+              </svg>
+            </button>
+
+            <!-- LTR / RTL DIRECTION TOGGLE BUTTON -->
+            <button id="rtl-toggle-btn" 
+                    type="button" 
+                    onclick="toggleRTL()" 
+                    aria-label="Toggle Text Direction LTR or RTL"
+                    title="Toggle LTR / RTL Direction"
+                    class="px-2.5 py-1.5 rounded-full text-xs font-semibold bg-slate-800 text-slate-200 border border-slate-700 hover:bg-slate-700 transition-all duration-200 flex items-center gap-1.5 focus:outline-none focus:ring-2 focus:ring-amber-400">
+              <svg class="w-4 h-4 text-amber-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7.5 21L3 16.5m0 0L7.5 12M3 16.5h13.5m0-13.5L21 7.5m0 0L16.5 12M21 7.5H7.5"/>
+              </svg>
+              <span id="rtl-status-label" class="tracking-wide">LTR</span>
+            </button>
+
+            <!-- LOGIN BUTTON -->
+            <button onclick="openLoginModal()" 
+                    class="hidden sm:flex items-center gap-2 px-5 py-2.5 rounded-full bg-amber-400 hover:bg-amber-300 text-slate-950 text-sm font-bold shadow-md hover:shadow-lg transition-all duration-200 transform hover:-translate-y-0.5 active:translate-y-0">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z"/>
+              </svg>
+              <span>Log In</span>
+            </button>
+
+            <!-- HAMBURGER BUTTON -->
+            <button id="mobile-menu-trigger" 
+                    type="button" 
+                    onclick="toggleMobileMenu(true)"
+                    aria-label="Open navigation menu"
+                    class="lg:hidden p-2.5 rounded-2xl text-slate-800 dark:text-slate-100 hover:bg-sand-200 dark:hover:bg-sleep-800 focus:outline-none focus:ring-2 focus:ring-sleep-500 transition-colors">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+              </svg>
+            </button>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </header>
+
+  <!-- ========================================== -->
+  <!-- MOBILE SLIDE-OUT DRAWER MENU               -->
+  <!-- ========================================== -->
+  <div id="mobile-menu-backdrop" 
+       onclick="toggleMobileMenu(false)" 
+       class="fixed inset-0 bg-slate-900/60 backdrop-blur-xs z-50 opacity-0 pointer-events-none transition-opacity duration-300 lg:hidden">
+  </div>
+
+  <aside id="mobile-drawer" 
+         aria-label="Mobile Navigation Menu"
+         class="fixed top-0 bottom-0 w-80 max-w-[85vw] bg-white dark:bg-sleep-900 z-50 shadow-2xl transition-transform duration-300 ease-out flex flex-col justify-between overflow-y-auto lg:hidden">
+    
+    <!-- Drawer Header -->
+    <div class="p-5 border-b border-sand-200 dark:border-sleep-800 flex items-center justify-between">
+      <div class="flex items-center space-x-3 rtl:space-x-reverse">
+        <div class="w-10 h-10 rounded-xl bg-sleep-900 dark:bg-sleep-800 flex items-center justify-center text-amber-300 shadow-md">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"/></svg>
+        </div>
+        <span class="text-xl font-extrabold text-sleep-900 dark:text-white tracking-tight">SOMNA SLEEP</span>
+      </div>
+
+      <!-- Close Button -->
+      <button onclick="toggleMobileMenu(false)" 
+              aria-label="Close menu"
+              class="p-2 rounded-full text-slate-400 hover:text-slate-800 dark:hover:text-white hover:bg-sand-100 dark:hover:bg-sleep-800 transition-colors">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+        </svg>
+      </button>
+    </div>
+
+    <!-- Drawer Links -->
+    <div class="p-5 space-y-2 flex-1">
+
+      <!-- Mobile Accordion for Home -->
+      <div class="rounded-2xl bg-sand-100/70 dark:bg-sleep-800/40 p-2 space-y-1">
+        <button onclick="toggleMobileHomeSubmenu()" 
+                class="w-full flex items-center justify-between px-3 py-2.5 text-slate-900 dark:text-white font-semibold text-base rounded-xl hover:bg-sand-200 dark:hover:bg-sleep-800 transition-colors">
+          <span class="flex items-center gap-2">
+            <svg class="w-5 h-5 text-sleep-600 dark:text-amber-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg>
+            Home
+          </span>
+          <svg id="mobile-home-chevron" class="w-4 h-4 text-slate-400 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 15l-7-7-7 7"/>
+          </svg>
+        </button>
+
+        <div id="mobile-home-submenu" class="hidden pl-8 rtl:pr-8 rtl:pl-0 space-y-1 py-1">
+          <a href="index.html" class="flex items-center justify-between py-2 px-3 text-sm rounded-lg font-medium text-sleep-800 dark:text-amber-300 bg-white/80 dark:bg-sleep-800/80 shadow-xs">
+            <span>Home 1</span>
+            <div class="flex items-center gap-2">
+              <span class="w-2 h-2 rounded-full bg-amber-400"></span>
+              <svg class="w-4 h-4 text-sleep-700 dark:text-amber-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg>
+            </div>
+          </a>
+          <a href="home2.html" class="flex items-center justify-between py-2 px-3 text-sm rounded-lg font-medium text-slate-600 dark:text-slate-300 hover:bg-white/50 dark:hover:bg-sleep-800/40">
+            <span>Home 2</span>
+            <svg class="w-4 h-4 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5m0 0h4m-4 0V11m0 0h4m-4 0H9"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- Main Navigation Links -->
+      <a href="#mattresses" onclick="toggleMobileMenu(false)" class="flex items-center gap-3 px-4 py-3 text-slate-800 dark:text-slate-200 font-semibold text-base rounded-xl hover:bg-sand-100 dark:hover:bg-sleep-800/60 transition-colors">
+        <svg class="w-5 h-5 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"/></svg>
+        Mattresses
+      </a>
+
+      <a href="#pillows" onclick="toggleMobileMenu(false)" class="flex items-center gap-3 px-4 py-3 text-slate-800 dark:text-slate-200 font-semibold text-base rounded-xl hover:bg-sand-100 dark:hover:bg-sleep-800/60 transition-colors">
+        <svg class="w-5 h-5 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"/></svg>
+        Pillows & Bedding
+      </a>
+
+      <a href="#trial" onclick="toggleMobileMenu(false)" class="flex items-center justify-between px-4 py-3 text-slate-800 dark:text-slate-200 font-semibold text-base rounded-xl hover:bg-sand-100 dark:hover:bg-sleep-800/60 transition-colors">
+        <span class="flex items-center gap-3">
+          <svg class="w-5 h-5 text-emerald-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+          Trial & Returns
+        </span>
+        <span class="text-xs bg-emerald-100 text-emerald-700 dark:bg-emerald-900/50 dark:text-emerald-300 font-bold px-2 py-0.5 rounded-full">100 Nights</span>
+      </a>
+
+      <a href="#delivery" onclick="toggleMobileMenu(false)" class="flex items-center gap-3 px-4 py-3 text-slate-800 dark:text-slate-200 font-semibold text-base rounded-xl hover:bg-sand-100 dark:hover:bg-sleep-800/60 transition-colors">
+        <svg class="w-5 h-5 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+        Home Delivery
+      </a>
+
+      <a href="#contact" onclick="toggleMobileMenu(false)" class="flex items-center gap-3 px-4 py-3 text-slate-800 dark:text-slate-200 font-semibold text-base rounded-xl hover:bg-sand-100 dark:hover:bg-sleep-800/60 transition-colors">
+        <svg class="w-5 h-5 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+        Contact
+      </a>
+    </div>
+
+    <!-- Mobile Drawer Footer Controls -->
+    <div class="p-5 border-t border-sand-200 dark:border-sleep-800 space-y-4 bg-sand-50/80 dark:bg-sleep-950/60">
+      
+      <div class="grid grid-cols-2 gap-3">
+        <!-- Dark Mode Switch in Mobile -->
+        <button onclick="toggleDarkMode()" class="flex items-center justify-center gap-2 p-2.5 rounded-xl border border-slate-200 dark:border-sleep-700 bg-white dark:bg-sleep-800 text-xs font-semibold text-slate-700 dark:text-slate-200">
+          <span class="block dark:hidden">🌙 Dark Mode</span>
+          <span class="hidden dark:block">☀️ Light Mode</span>
+        </button>
+        
+        <!-- RTL Switch in Mobile -->
+        <button onclick="toggleRTL()" class="flex items-center justify-center gap-2 p-2.5 rounded-xl border border-slate-200 dark:border-sleep-700 bg-white dark:bg-sleep-800 text-xs font-semibold text-slate-700 dark:text-slate-200">
+          <span>🌐 Switch Direction</span>
+        </button>
+      </div>
+
+      <!-- Login Button inside Mobile Drawer -->
+      <button onclick="toggleMobileMenu(false); openLoginModal();" 
+              class="w-full flex items-center justify-center gap-2 py-3 rounded-xl bg-sleep-900 hover:bg-sleep-800 dark:bg-amber-400 dark:hover:bg-amber-300 text-white dark:text-sleep-950 font-bold shadow-md">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/></svg>
+        <span>Account Login</span>
+      </button>
+
+    </div>
+  </aside>
+
+  <!-- Main Page Content Placeholder (Only Navbar & Footer included) -->
+  <main class="flex-grow"></main>
+
+  <!-- ========================================== -->
+  <!-- LOGIN MODAL                                -->
+  <!-- ========================================== -->
+  <div id="login-modal" 
+       class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/60 backdrop-blur-xs opacity-0 pointer-events-none transition-opacity duration-300">
+    <div class="bg-white dark:bg-sleep-900 rounded-3xl max-w-md w-full p-6 sm:p-8 shadow-sleep-dark border border-sand-200 dark:border-sleep-800 relative transform scale-95 transition-transform duration-300">
+      
+      <!-- Close Button -->
+      <button onclick="closeLoginModal()" class="absolute top-5 right-5 rtl:left-5 rtl:right-auto text-slate-400 hover:text-slate-700 dark:hover:text-white p-1 rounded-full hover:bg-sand-100 dark:hover:bg-sleep-800">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+      </button>
+
+      <div class="text-center space-y-2 mb-6">
+        <div class="w-12 h-12 rounded-2xl bg-sleep-900 dark:bg-sleep-800 text-amber-300 flex items-center justify-center mx-auto shadow-md">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/></svg>
+        </div>
+        <h3 class="text-2xl font-bold text-sleep-950 dark:text-white">Welcome Back</h3>
+        <p class="text-xs text-slate-500 dark:text-slate-400">Log in to manage your orders & 100-night trial status</p>
+      </div>
+
+      <form onsubmit="event.preventDefault(); alert('Login submitted successfully!'); closeLoginModal();" class="space-y-4">
+        <div>
+          <label class="block text-xs font-semibold text-slate-700 dark:text-slate-300 mb-1">Email Address</label>
+          <input type="email" placeholder="you@example.com" required class="w-full px-4 py-3 rounded-xl border border-sand-300 dark:border-sleep-700 bg-sand-50 dark:bg-sleep-800/60 text-sm focus:outline-none focus:ring-2 focus:ring-sleep-500 dark:text-white">
+        </div>
+
+        <div>
+          <label class="block text-xs font-semibold text-slate-700 dark:text-slate-300 mb-1">Password</label>
+          <input type="password" placeholder="••••••••" required class="w-full px-4 py-3 rounded-xl border border-sand-300 dark:border-sleep-700 bg-sand-50 dark:bg-sleep-800/60 text-sm focus:outline-none focus:ring-2 focus:ring-sleep-500 dark:text-white">
+        </div>
+
+        <button type="submit" class="w-full py-3.5 rounded-xl bg-sleep-900 hover:bg-sleep-800 dark:bg-amber-400 dark:hover:bg-amber-300 text-white dark:text-sleep-950 font-bold text-sm shadow-md transition-colors">
+          Sign In
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- ========================================== -->
+  <!-- SLEEP-FOCUSED FOOTER                      -->
+  <!-- ========================================== -->
+  <footer class="bg-white dark:bg-sleep-950 border-t border-sand-200 dark:border-sleep-800/80 pt-16 pb-12 text-slate-600 dark:text-slate-400 transition-colors duration-300">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+      
+
+
+      <!-- Footer Top Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-8 items-start">
+        
+        <!-- Left Side Column 1: Brand, Slogan & 4 Social Icons (2 cols) -->
+        <div class="lg:col-span-2 space-y-4">
+          <div class="flex items-center space-x-3 rtl:space-x-reverse">
+            <div class="w-10 h-10 rounded-xl bg-sleep-900 dark:bg-sleep-800 flex items-center justify-center text-amber-300 shadow-md">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"/></svg>
+            </div>
+            <span class="text-xl font-extrabold text-sleep-900 dark:text-white tracking-tight">SOMNA SLEEP</span>
+          </div>
+          <p class="text-sm text-slate-500 dark:text-slate-400 max-w-sm leading-relaxed">
+            Crafting restorative sleep through ergonomic foam engineering, breathable organic covers, and sustainable craftsmanship.
+          </p>
+
+          <!-- 4 Social Icons Directly Below Slogan -->
+          <div class="pt-2 flex items-center space-x-3 rtl:space-x-reverse">
+            <!-- 1. Instagram Icon -->
+            <a href="#" aria-label="Instagram" class="w-9 h-9 rounded-full bg-sand-100 dark:bg-sleep-900 flex items-center justify-center text-slate-600 dark:text-slate-300 hover:text-sleep-900 dark:hover:text-amber-300 hover:bg-sand-200 dark:hover:bg-sleep-800 transition-all shadow-xs">
+              <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+            </a>
+
+            <!-- 2. Facebook Icon -->
+            <a href="#" aria-label="Facebook" class="w-9 h-9 rounded-full bg-sand-100 dark:bg-sleep-900 flex items-center justify-center text-slate-600 dark:text-slate-300 hover:text-sleep-900 dark:hover:text-amber-300 hover:bg-sand-200 dark:hover:bg-sleep-800 transition-all shadow-xs">
+              <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M9 8H6v4h3v12h5V12h3.642L18 8h-4V6.333C14 5.374 14.5 5 15.5 5H18V0h-3.808C10.592 0 9 1.592 9 4.415V8z"/></svg>
+            </a>
+
+            <!-- 3. Twitter / X Icon -->
+            <a href="#" aria-label="Twitter X" class="w-9 h-9 rounded-full bg-sand-100 dark:bg-sleep-900 flex items-center justify-center text-slate-600 dark:text-slate-300 hover:text-sleep-900 dark:hover:text-amber-300 hover:bg-sand-200 dark:hover:bg-sleep-800 transition-all shadow-xs">
+              <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+            </a>
+
+            <!-- 4. Pinterest Icon -->
+            <a href="#" aria-label="Pinterest" class="w-9 h-9 rounded-full bg-sand-100 dark:bg-sleep-900 flex items-center justify-center text-slate-600 dark:text-slate-300 hover:text-sleep-900 dark:hover:text-amber-300 hover:bg-sand-200 dark:hover:bg-sleep-800 transition-all shadow-xs">
+              <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12.017 0C5.396 0 .029 5.367.029 11.987c0 5.079 3.158 9.417 7.618 11.162-.105-.949-.199-2.403.041-3.439.219-.937 1.406-5.957 1.406-5.957s-.359-.72-.359-1.781c0-1.663.967-2.911 2.168-2.911 1.024 0 1.518.769 1.518 1.688 0 1.029-.653 2.567-.992 3.992-.285 1.193.6 2.165 1.775 2.165 2.128 0 3.768-2.245 3.768-5.487 0-2.861-2.063-4.869-5.008-4.869-3.41 0-5.409 2.562-5.409 5.199 0 1.033.394 2.143.889 2.741.099.12.112.225.085.345-.09.375-.293 1.199-.334 1.363-.053.225-.172.271-.401.165-1.495-.69-2.433-2.878-2.433-4.646 0-3.776 2.748-7.252 7.92-7.252 4.158 0 7.392 2.967 7.392 6.923 0 4.135-2.607 7.462-6.233 7.462-1.214 0-2.354-.629-2.758-1.379l-.749 2.848c-.269 1.045-1.004 2.352-1.498 3.146 1.123.345 2.306.535 3.55.535 6.607 0 11.985-5.365 11.985-11.987C23.97 5.39 18.592.026 11.985.026l.032-.026z"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Center Column 2: Quick Links (1 col) -->
+        <div class="space-y-3">
+          <h4 class="text-xs font-bold uppercase tracking-wider text-sleep-900 dark:text-white">Shop Sleep</h4>
+          <ul class="space-y-2 text-sm">
+            <li><a href="#mattresses" class="hover:text-sleep-700 dark:hover:text-amber-300 transition-colors">Luxe Hybrid</a></li>
+            <li><a href="#mattresses" class="hover:text-sleep-700 dark:hover:text-amber-300 transition-colors">Organic Latex</a></li>
+            <li><a href="#pillows" class="hover:text-sleep-700 dark:hover:text-amber-300 transition-colors">Cooling Pillows</a></li>
+            <li><a href="#pillows" class="hover:text-sleep-700 dark:hover:text-amber-300 transition-colors">Adjustable Bases</a></li>
+          </ul>
+        </div>
+
+        <!-- Center Column 3: Customer Care (1 col) -->
+        <div class="space-y-3">
+          <h4 class="text-xs font-bold uppercase tracking-wider text-sleep-900 dark:text-white">Customer Care</h4>
+          <ul class="space-y-2 text-sm">
+            <li><a href="#trial" class="hover:text-sleep-700 dark:hover:text-amber-300 transition-colors">100-Night Trial</a></li>
+            <li><a href="#delivery" class="hover:text-sleep-700 dark:hover:text-amber-300 transition-colors">Home Delivery</a></li>
+            <li><a href="#contact" class="hover:text-sleep-700 dark:hover:text-amber-300 transition-colors">Warranty & Returns</a></li>
+            <li><a href="#contact" class="hover:text-sleep-700 dark:hover:text-amber-300 transition-colors">Contact Support</a></li>
+          </ul>
+        </div>
+
+        <!-- Right Side Column 4: Newsletter Subscribe (2 cols - Styled Pill matching reference) -->
+        <div class="lg:col-span-2 space-y-3">
+          <h4 class="text-sm font-bold text-sleep-900 dark:text-white tracking-tight">Subscribe to Restful Updates</h4>
+          <p class="text-xs text-slate-500 dark:text-slate-400">Get exclusive sleep tips, trial offers & seasonal discounts.</p>
+          <form onsubmit="event.preventDefault(); alert('Subscribed to newsletter!');" class="w-full">
+            <div class="relative flex items-center w-full rounded-full border border-sand-300 dark:border-sleep-700 bg-sand-100/70 dark:bg-sleep-900/90 p-1 shadow-xs focus-within:ring-2 focus-within:ring-sleep-500">
+              <input type="email" 
+                     placeholder="Enter your email" 
+                     required 
+                     class="w-full px-4 py-2.5 text-xs bg-transparent text-slate-800 dark:text-white placeholder-slate-400 focus:outline-none rounded-l-full">
+              <button type="submit" 
+                      class="px-6 py-2.5 text-xs font-bold bg-sleep-900 hover:bg-sleep-800 dark:bg-amber-400 dark:hover:bg-amber-300 text-white dark:text-sleep-950 rounded-full transition-all flex-shrink-0 shadow-sm">
+                Join
+              </button>
+            </div>
+          </form>
+        </div>
+
+      </div>
+
+      <!-- Footer Bottom Bar -->
+      <div class="border-t border-sand-200 dark:border-sleep-800/80 pt-8 flex flex-col md:flex-row items-center justify-between gap-4 text-xs">
+        <p>&copy; 2026 Somna Bedding Co. All rights reserved. Designed for optimal rest.</p>
+        
+        <!-- Legal Links -->
+        <div class="flex items-center space-x-6 rtl:space-x-reverse">
+          <a href="#" class="hover:underline">Privacy Policy</a>
+          <a href="#" class="hover:underline">Terms of Service</a>
+          <a href="#" class="hover:underline">Cookie Settings</a>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- ========================================== -->
+  <!-- JAVASCRIPT CONTROLLER                      -->
+  <!-- ========================================== -->
+  <script>
+    // State management
+    let currentTheme = localStorage.getItem('theme') || 'light';
+    let currentDir = localStorage.getItem('dir') || 'ltr';
+    let activeHomeOption = 'home1';
+
+    // Initialize layout on DOM load
+    document.addEventListener('DOMContentLoaded', () => {
+      initTheme();
+      initDir();
+      setActiveHome(activeHomeOption);
+    });
+
+    // Theme Switcher (Dark Mode / Light Mode)
+    function initTheme() {
+      if (currentTheme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+        document.documentElement.classList.add('dark');
+        currentTheme = 'dark';
+      } else {
+        document.documentElement.classList.remove('dark');
+        currentTheme = 'light';
+      }
+    }
+
+    function toggleDarkMode() {
+      if (document.documentElement.classList.contains('dark')) {
+        document.documentElement.classList.remove('dark');
+        localStorage.setItem('theme', 'light');
+        currentTheme = 'light';
+      } else {
+        document.documentElement.classList.add('dark');
+        localStorage.setItem('theme', 'dark');
+        currentTheme = 'dark';
+      }
+    }
+
+    // Direction Switcher (LTR / RTL)
+    function initDir() {
+      document.documentElement.setAttribute('dir', currentDir);
+      const rtlLabel = document.getElementById('rtl-status-label');
+      if (rtlLabel) rtlLabel.innerText = currentDir.toUpperCase();
+      const mobileRtlLabel = document.getElementById('mobile-rtl-status-label');
+      if (mobileRtlLabel) mobileRtlLabel.innerText = currentDir.toUpperCase();
+    }
+
+    function toggleRTL() {
+      currentDir = currentDir === 'ltr' ? 'rtl' : 'ltr';
+      document.documentElement.setAttribute('dir', currentDir);
+      localStorage.setItem('dir', currentDir);
+      const rtlLabel = document.getElementById('rtl-status-label');
+      if (rtlLabel) rtlLabel.innerText = currentDir.toUpperCase();
+      const mobileRtlLabel = document.getElementById('mobile-rtl-status-label');
+      if (mobileRtlLabel) mobileRtlLabel.innerText = currentDir.toUpperCase();
+    }
+
+    // Active Navbar Link Switcher
+    let activeNavKey = 'home';
+
+    function setActiveNav(navKey) {
+      activeNavKey = navKey;
+      const navKeys = ['home', 'mattresses', 'pillows', 'trial', 'delivery', 'contact'];
+      
+      navKeys.forEach(key => {
+        const btn = document.getElementById('nav-btn-' + key);
+        if (btn) {
+          if (key === navKey) {
+            btn.className = 'main-nav-btn inline-flex items-center gap-1.5 px-3.5 py-2 rounded-full text-amber-400 font-bold text-base transition-all duration-200 focus:outline-none';
+          } else {
+            btn.className = 'main-nav-btn inline-flex items-center gap-1.5 px-3.5 py-2 rounded-full text-slate-200 hover:text-amber-400 hover:bg-slate-800/80 font-medium text-base transition-all duration-200';
+          }
+        }
+      });
+    }
+
+    // Active Home selection (Home 1 / Home 2)
+    function setActiveHome(homeChoice) {
+      if (homeChoice === 'home1') {
+        window.location.href = 'index.html';
+      } else if (homeChoice === 'home2') {
+        window.location.href = 'home2.html';
+      } else {
+        const badge1 = document.getElementById('home1-badge');
+        const badge2 = document.getElementById('home2-badge');
+        const option1 = document.getElementById('home1-option');
+        const option2 = document.getElementById('home2-option');
+        if(badge1) badge1.className = 'w-2 h-2 rounded-full bg-transparent';
+        if(badge2) badge2.className = 'w-2 h-2 rounded-full bg-amber-400 ring-4 ring-amber-400/20';
+        if(option2) option2.className = 'home-option-link flex items-center justify-between px-3.5 py-2.5 rounded-xl bg-slate-800 text-amber-400 font-bold text-sm transition-all duration-200';
+        if(option1) option1.className = 'home-option-link flex items-center justify-between px-3.5 py-2.5 rounded-xl hover:bg-slate-800/80 text-slate-200 hover:text-amber-300 font-semibold text-sm transition-all duration-200';
+      }
+    }
+
+    // Mobile Navigation Drawer Toggle
+    function toggleMobileMenu(open) {
+      const drawer = document.getElementById('mobile-drawer');
+      const backdrop = document.getElementById('mobile-menu-backdrop');
+      
+      if (open) {
+        if (drawer) drawer.classList.add('open');
+        if (backdrop) {
+          backdrop.classList.remove('opacity-0', 'pointer-events-none');
+          backdrop.classList.add('opacity-100');
+        }
+        document.body.style.overflow = 'hidden';
+      } else {
+        if (drawer) drawer.classList.remove('open');
+        if (backdrop) {
+          backdrop.classList.remove('opacity-100');
+          backdrop.classList.add('opacity-0', 'pointer-events-none');
+        }
+        document.body.style.overflow = '';
+      }
+    }
+
+    // Mobile Home Submenu Accordion Toggle
+    function toggleMobileHomeSubmenu() {
+      const submenu = document.getElementById('mobile-home-submenu');
+      const chevron = document.getElementById('mobile-home-chevron');
+      if (submenu) {
+        const isHidden = submenu.classList.contains('hidden') || submenu.style.display === 'none' || getComputedStyle(submenu).display === 'none';
+        if (isHidden) {
+          submenu.style.display = 'block';
+          submenu.classList.remove('hidden');
+          if (chevron) chevron.classList.add('rotate-180');
+        } else {
+          submenu.style.display = 'none';
+          submenu.classList.add('hidden');
+          if (chevron) chevron.classList.remove('rotate-180');
+        }
+      }
+    }
+    }
+
+    // Login Modal Handlers
+    function openLoginModal() {
+      const modal = document.getElementById('login-modal');
+      if (!modal) return;
+      modal.classList.remove('opacity-0', 'pointer-events-none');
+      modal.classList.add('opacity-100');
+      if (modal.firstElementChild) {
+        modal.firstElementChild.classList.remove('scale-95');
+        modal.firstElementChild.classList.add('scale-100');
+      }
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeLoginModal() {
+      const modal = document.getElementById('login-modal');
+      if (!modal) return;
+      modal.classList.remove('opacity-100');
+      modal.classList.add('opacity-0', 'pointer-events-none');
+      if (modal.firstElementChild) {
+        modal.firstElementChild.classList.remove('scale-100');
+        modal.firstElementChild.classList.add('scale-95');
+      }
+      document.body.style.overflow = '';
+    }
+
+    // Keyboard Access - ESC closes mobile menu and modals
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        toggleMobileMenu(false);
+        closeLoginModal();
+      }
+    });
+  </script>
+</body>
+</html>
